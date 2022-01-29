@@ -110,12 +110,12 @@ public class GameManager : MonoBehaviour
                 m_isWinning = false;
 
                 Random.InitState(m_seed);
-                m_playerObjectives[0] = Random.Range(0, charactersPrefabs.Count - 1);
-                m_playerObjectives[1] = Random.Range(0, charactersPrefabs.Count - 1);
+                m_playerObjectives[0] = Random.Range(0, charactersPrefabs.Count);
+                m_playerObjectives[1] = Random.Range(0, charactersPrefabs.Count);
 
                 AgentManager.Get().SpawnAgents(charactersPrefabs);
-                //Debug.Log(m_playerObjectives[0]);
-                //Debug.Log(m_playerObjectives[1]);
+                Debug.Log(m_playerObjectives[0]);
+                Debug.Log(m_playerObjectives[1]);
 
                 dropZonesContainer.SetActive(true);
             }
