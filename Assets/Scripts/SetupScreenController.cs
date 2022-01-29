@@ -18,13 +18,13 @@ public class SetupScreenController : MonoBehaviour
     {
         p1Button.onClick.AddListener(
         () => {
-            GameManager.Get().localPlayer = 1;
+            GameManager.Get().localPlayer = 0;
             updateUI();
         });
 
         p2Button.onClick.AddListener(
         () => {
-            GameManager.Get().localPlayer = 2;
+            GameManager.Get().localPlayer = 1;
             updateUI();
         });
 
@@ -45,6 +45,12 @@ public class SetupScreenController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnEnable()
+    {
+        seedField.text = "";
+        updateUI();
     }
 
     void updateUI()
@@ -68,13 +74,13 @@ public class SetupScreenController : MonoBehaviour
             p2Colors.highlightedColor = normalColor;
             p2Colors.selectedColor = normalColor;
 
-            if (gm.localPlayer == 1)
+            if (gm.localPlayer == 0)
             {
                 p1Colors.normalColor = selectedColor;
                 p1Colors.highlightedColor = selectedColor;
                 p1Colors.selectedColor = selectedColor;
             }
-            else if (gm.localPlayer == 2)
+            else if (gm.localPlayer == 1)
             {
                 p2Colors.normalColor = selectedColor;
                 p2Colors.highlightedColor = selectedColor;
@@ -104,7 +110,7 @@ public class SetupScreenController : MonoBehaviour
         }
 
         // Start Button
-        startButton.interactable = (gm.localPlayer == 1 || gm.localPlayer == 2) && isSeedValid;
+        startButton.interactable = (gm.localPlayer == 0 || gm.localPlayer == 1) && isSeedValid;
     }
 
 }

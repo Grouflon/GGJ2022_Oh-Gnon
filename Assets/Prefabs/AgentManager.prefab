@@ -111,3 +111,4 @@ MonoBehaviour:
   AgentParameters: {fileID: 11400000, guid: 7012da67afc878442854e162237a0684, type: 2}
   TopLeftCorner: {fileID: 1234978015259668596}
   BottomRightCorner: {fileID: 2295582497403139073}
+  AgentPrefab: {fileID: 5697866203614312016, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}

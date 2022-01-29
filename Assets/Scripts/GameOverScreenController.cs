@@ -9,7 +9,8 @@ public class GameOverScreenController : MonoBehaviour
     public Button restartButton;
     public TMP_Text text;
 
-    public void updateScreen()
+
+    void updateUI()
     {
         if (GameManager.Get().isWinning)
         {
@@ -27,5 +28,10 @@ public class GameOverScreenController : MonoBehaviour
         () => {
             GameManager.Get().setGameState(GameState.Setup);
         });
+    }
+
+    void OnEnable()
+    {
+        updateUI();
     }
 }
