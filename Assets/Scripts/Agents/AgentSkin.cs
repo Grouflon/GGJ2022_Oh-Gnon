@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEditor;
+
 using Spine;
 using Spine.Unity;
 
@@ -30,7 +31,7 @@ public class AgentSkin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     static void AddSkin(SkeletonAnimation _skeletonAnimation, Skin _parentSkin, string _skinName)
@@ -59,32 +60,10 @@ public class AgentSkin : MonoBehaviour
         AddSkin(mySkeletonAnimation, newSkin, "Head/" + Head);
         AddSkin(mySkeletonAnimation, newSkin, "Pants/" + Pants);
         AddSkin(mySkeletonAnimation, newSkin, "Genitals/" + Genitals);
-        
+
         mySkeletonAnimation.Skeleton.SetSkin(newSkin);
         mySkeletonAnimation.Skeleton.SetSlotsToSetupPose();
     }
 
     SkeletonAnimation skeletonAnimation;
-}
-
- [CustomEditor(typeof(AgentSkin))]
- class AgentSkinEditor : Editor
- {
-    AgentSkin agentSkin;
-
-    void OnEnable()
-    {
-        agentSkin = target as AgentSkin;
-        agentSkin.UpdateSkin();
-    }
-
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector();
-
-        if (GUILayout.Button("Apply Skin"))
-        {
-            agentSkin.UpdateSkin();
-        }
-    }
 }
