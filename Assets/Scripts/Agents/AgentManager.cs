@@ -40,6 +40,9 @@ public class AgentManager : MonoBehaviour
 
             agent.OnAgentKilled += OnSpawnedAgentKilled;
 
+            //Say a phrase when spawned (with a start delay)
+            agent.gameObject.GetComponent<SayPhrase>().SayPhraseAtBeginning(Random.Range((float)1, (float)3));
+
             agents.Add(agent);
             ++id;
         }
@@ -94,6 +97,12 @@ public class AgentManager : MonoBehaviour
     {
         bool result = agents.Remove(_agent);
         Assert.IsTrue(result);
+
+        foreach (Agent agentTemp in agents)
+        {
+            //Say a phrase when spawned (with a start delay)
+            agentTemp.gameObject.GetComponent<SayPhrase>().SayPhraseWhenACharaDie(_agent.id);
+        }
 
         if (OnAgentKilled != null) OnAgentKilled(_agent);
     }

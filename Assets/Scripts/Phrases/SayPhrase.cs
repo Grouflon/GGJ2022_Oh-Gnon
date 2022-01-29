@@ -10,13 +10,15 @@ public class SayPhrase : MonoBehaviour
     private TextMeshProUGUI TextOverHead_Mesh;
     private Agent m_Agent;
     public PhraseArrays m_PhraseArrays;
+    private bool isShowingPhrase = false;
+    private float DelayBeforeStart = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         TextOverHead_Mesh = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         m_Agent = gameObject.GetComponent<Agent>();
-
+        
     }
 
     // Update is called once per frame
@@ -25,40 +27,64 @@ public class SayPhrase : MonoBehaviour
         
     }
 
+    private void OnMouseEnter()
+    {
+        if (!isShowingPhrase)
+        {
+            //m_Agent.id = Random.Range(0, m_infoTemp.Length - 1);
+            //m_Agent.infos = m_infoTemp[m_Agent.id];
+
+            //SayPhraseWhenACharaDie(Random.Range(0,23));
+        }
+    }
+
     private void OnMouseOver()
     {
         //TextOverHead_Mesh.text = CharacterName;
-        TextOverHead_Mesh.enabled = true;
+        //TextOverHead_Mesh.enabled = true;
     }
 
     private void OnMouseExit()
     {
-        TextOverHead_Mesh.text = "";
-        TextOverHead_Mesh.enabled = false;
+        //TextOverHead_Mesh.text = "";
+        //TextOverHead_Mesh.enabled = false;
     }
 
-    public void SayPhraseAtBeginning()
+    public void SayPhraseAtBeginning(float Delay)
     {
-        string PhraseToSay = "sdojfoijf";
+        string PhraseToSay = "NoPhraseToSay";
 
         if (Random.Range(0, 100) <= 20)
-            PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseQuiche);
+            PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseBonjour);
+        else
+            PhraseToSay = "";
+
+        DelayBeforeStart = Delay;
+        StartCoroutine("ShowPhrase", PhraseToSay);
+    }
+
+    public void SayPhraseWhenPickedUp()
+    {
+        string PhraseToSay = "NoPhraseToSay";
+
+        if (Random.Range(0, 100) <= 20)
+            PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhrasePanic);
         else
             PhraseToSay = "";
 
 
+        StartCoroutine("ShowPhrase", PhraseToSay);
     }
+
 
     public void SayPhraseWhenACharaDie(int IDwhoDied)
     {
-        string PhraseToSay = "sdojfoijf";
+        string PhraseToSay = "NoPhraseToSay";
 
         if (IDwhoDied == 21) //ID de QUICHE
         {
             if (Random.Range(0, 100) <= 20)
                 PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseQuiche);
-            else
-                PhraseToSay = "";
         }
         else
         {
@@ -110,7 +136,7 @@ public class SayPhrase : MonoBehaviour
             }
         }
 
-
+        StartCoroutine("ShowPhrase", PhraseToSay);
     }
 
 
@@ -152,5 +178,34 @@ public class SayPhrase : MonoBehaviour
         return Array[Random.Range(0, Array.Length - 1)];
     }
 
+    IEnumerator ShowPhrase(string text)
+    {
+        float typeSpeed = 1;
+        float duration = 3;
+        char[] Text_Array = text.ToCharArray();
+        string TempString = "";
 
+
+        yield return new WaitForSeconds(DelayBeforeStart);
+
+        isShowingPhrase = true;
+        TextOverHead_Mesh.text = "";
+        TextOverHead_Mesh.enabled = true;
+
+        foreach (char letter in Text_Array)
+        {
+            TempString += letter;
+            TextOverHead_Mesh.text = TempString;
+            yield return new WaitForSeconds(typeSpeed/ Text_Array.Length);
+        }
+
+
+        yield return new WaitForSeconds(duration);
+
+
+        TextOverHead_Mesh.text = "";
+        TextOverHead_Mesh.enabled = false;
+
+        isShowingPhrase = false;
+    }
 }
