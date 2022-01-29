@@ -13,13 +13,31 @@ public class AgentAudio : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<Agent>();
-    }
+        agent.OnAgentStateChanged += OnAgentStateChanged;
 
-    void Start()
-    {
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = Random.Range(0.2f, 0.5f);
         barkTime = Random.Range(0f, 15f);
+    }
+
+    void OnAgentStateChanged(Agent agent, AgentState state)
+    {
+        if(state == AgentState.DRAGGED)
+        {
+            audioSource.volume = 1f;
+            SoundManager.Get().PlayRandomSound(SoundType.FEAR, audioSource);
+        }
+
+        if (state == AgentState.DEAD)
+        {
+            audioSource.volume = 1f;
+            SoundManager.Get().PlayRandomSound(SoundType.DEATH, audioSource);
+        }
+
+        if (agent.GetState() == AgentState.WALK || agent.GetState() == AgentState.IDLE)
+        {
+            audioSource.volume = Random.Range(0.2f, 1f);
+        }
     }
 
     void Update()

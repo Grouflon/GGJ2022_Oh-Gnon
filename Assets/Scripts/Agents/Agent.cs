@@ -24,6 +24,9 @@ public class Agent : MonoBehaviour
 
     public delegate void AgentDelegate(Agent _agent);
     public event AgentDelegate OnAgentKilled;
+    public delegate void AgentStateDelegate(Agent _agent, AgentState _state);
+    public event AgentStateDelegate OnAgentStateChanged;
+
     AudioSource audioSource;
 
     void Start()
@@ -40,6 +43,7 @@ public class Agent : MonoBehaviour
 
     public void Kill()
     {
+        SetState(AgentState.DEAD);
         if (OnAgentKilled != null) OnAgentKilled(this);
         Destroy(gameObject);
     }
@@ -48,7 +52,9 @@ public class Agent : MonoBehaviour
     {
         agentState = state;
 
-        if(agentState == AgentState.WALK)
+        if (OnAgentStateChanged != null) OnAgentStateChanged(this, agentState);
+
+        if (agentState == AgentState.WALK)
         {
             //destination = AgentManager.Get().GetRandomPointInGameArea();
             destination = transform.position + (Vector3)Random.insideUnitCircle * AgentManager.Get().GetRandomWalkDistance();
