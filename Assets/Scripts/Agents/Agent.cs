@@ -110,10 +110,4 @@ public class Agent : MonoBehaviour
                 break;
         }
     }
-
-    // Temporary, to be replaced by drop
-    private void OnMouseUp()
-    {
-        Kill();
-    }
 }

@@ -18,7 +18,7 @@ public class DragManager : MonoBehaviour
             m_currentDropZone == null)
             return;
 
-        Destroy(m_currentDraggable.gameObject);
+        m_currentDraggable.GetComponent<Agent>().Kill();
     }
 
     private void Update()
