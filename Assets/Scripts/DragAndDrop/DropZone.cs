@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 
 using UnityEngine;
@@ -17,25 +18,13 @@ public class DropZone : MonoBehaviour
         m_sr = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    public void Unselect()
     {
-        // Check colliders under mouse
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        var hits = Physics2D.RaycastAll(ray.origin, Vector2.zero);
-        m_mouseOver = false;
-        if (hits.Length > 0)
-        {
-            m_mouseOver = hits.FirstOrDefault(h => h.collider.transform == transform) != default(RaycastHit2D);
-        }
+        m_sr.color = m_defaultColor;
+    }
 
-        // Color
-        if (m_mouseOver)
-        {
-            m_sr.color = m_overColor;
-        }
-        else
-        {
-            m_sr.color = m_defaultColor;
-        }
+    public void Select()
+    {
+        m_sr.color = m_overColor;
     }
 }
