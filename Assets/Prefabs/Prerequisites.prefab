@@ -979,7 +979,7 @@ MonoBehaviour:
   quickStart: 1
   setupScreenController: {fileID: 1637083011}
   gameOverScreenController: {fileID: 7431966788649471138}
-  dropZonesContainer: {fileID: 0}
+  dropZonesContainer: {fileID: 8752197739943187641}
 --- !u!1 &8473717012009366879
 GameObject:
   m_ObjectHideFlags: 0
