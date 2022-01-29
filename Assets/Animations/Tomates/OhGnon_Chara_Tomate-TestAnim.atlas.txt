@@ -1,0 +1,104 @@
+
+OhGnon_Chara_Tomate-TestAnim.png
+size: 962,962
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arrière-plan
+  rotate: false
+  xy: 2, 488
+  size: 395, 472
+  orig: 395, 472
+  offset: 0, 0
+  index: -1
+Bouche Smirk
+  rotate: true
+  xy: 278, 194
+  size: 64, 44
+  orig: 64, 44
+  offset: 0, 0
+  index: -1
+Buste Et Bras
+  rotate: true
+  xy: 278, 260
+  size: 226, 126
+  orig: 226, 126
+  offset: 0, 0
+  index: -1
+Feuille Droite
+  rotate: true
+  xy: 126, 20
+  size: 88, 43
+  orig: 88, 43
+  offset: 0, 0
+  index: -1
+Feuille Gauche
+  rotate: false
+  xy: 246, 6
+  size: 82, 36
+  orig: 82, 36
+  offset: 0, 0
+  index: -1
+Feuille Milieu Droite
+  rotate: true
+  xy: 171, 35
+  size: 73, 52
+  orig: 73, 52
+  offset: 0, 0
+  index: -1
+Feuille Milieu Gauche
+  rotate: false
+  xy: 225, 44
+  size: 59, 64
+  orig: 59, 64
+  offset: 0, 0
+  index: -1
+Jambes
+  rotate: false
+  xy: 2, 22
+  size: 122, 86
+  orig: 122, 86
+  offset: 0, 0
+  index: -1
+Oeil Droit
+  rotate: false
+  xy: 213, 2
+  size: 31, 31
+  orig: 31, 31
+  offset: 0, 0
+  index: -1
+Oeil Gauche
+  rotate: true
+  xy: 286, 51
+  size: 32, 30
+  orig: 32, 30
+  offset: 0, 0
+  index: -1
+Sourcil Droit
+  rotate: false
+  xy: 171, 7
+  size: 40, 26
+  orig: 40, 26
+  offset: 0, 0
+  index: -1
+Sourcil Gauche
+  rotate: false
+  xy: 286, 85
+  size: 35, 37
+  orig: 35, 37
+  offset: 0, 0
+  index: -1
+Tete
+  rotate: true
+  xy: 2, 110
+  size: 376, 274
+  orig: 376, 274
+  offset: 0, 0
+  index: -1
+Tige
+  rotate: false
+  xy: 278, 124
+  size: 35, 68
+  orig: 35, 68
+  offset: 0, 0
+  index: -1
