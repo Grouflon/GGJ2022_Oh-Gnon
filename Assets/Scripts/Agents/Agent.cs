@@ -75,6 +75,11 @@ public class Agent : MonoBehaviour
             idleTime = AgentManager.Get().GetRandomIdleTime();
             skeletonAnimation.AnimationName = "Idle";
         }
+
+        if (agentState == AgentState.DRAGGED)
+        {
+            skeletonAnimation.AnimationName = "Panic";
+        }
     }
 
     void Idle()
