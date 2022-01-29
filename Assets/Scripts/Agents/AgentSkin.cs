@@ -12,10 +12,12 @@ public class AgentSkin : MonoBehaviour
     public string Chest = "Chest_Pear";
     public string Eyes = "Neutral_Eyes";
     public string Mouth = "Mouth_Dumb";
-    public string Hair = "Pear_Hairs";
+    public string Hairs = "Pear_Hairs";
     public string Head = "Pear_Head";
     public string Pants = "Pear_Neutral_Pants";
     public string Genitals = "Pear_Vulve";
+    public string Hats = "";
+    public string Mustaches = "";
 
     void Awake()
     {
@@ -36,6 +38,9 @@ public class AgentSkin : MonoBehaviour
 
     static void AddSkin(SkeletonAnimation _skeletonAnimation, Skin _parentSkin, string _skinName)
     {
+        if (_skinName.Length == 0)
+            return;
+
         Skin skin = _skeletonAnimation.Skeleton.Data.FindSkin(_skinName);
         if (skin != null)
         {
@@ -56,10 +61,12 @@ public class AgentSkin : MonoBehaviour
         AddSkin(mySkeletonAnimation, newSkin, "Chests/" + Chest);
         AddSkin(mySkeletonAnimation, newSkin, "Eyes/" + Eyes);
         AddSkin(mySkeletonAnimation, newSkin, "Mouths/" + Mouth);
-        AddSkin(mySkeletonAnimation, newSkin, "Hairs/" + Hair);
+        AddSkin(mySkeletonAnimation, newSkin, "Hairs/" + Hairs);
         AddSkin(mySkeletonAnimation, newSkin, "Head/" + Head);
         AddSkin(mySkeletonAnimation, newSkin, "Pants/" + Pants);
         AddSkin(mySkeletonAnimation, newSkin, "Genitals/" + Genitals);
+        AddSkin(mySkeletonAnimation, newSkin, "Hats/" + Hats);
+        AddSkin(mySkeletonAnimation, newSkin, "Mustaches/" + Mustaches);
 
         mySkeletonAnimation.Skeleton.SetSkin(newSkin);
         mySkeletonAnimation.Skeleton.SetSlotsToSetupPose();

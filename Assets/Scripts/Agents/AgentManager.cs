@@ -39,7 +39,7 @@ public class AgentManager : MonoBehaviour
             agent.OnAgentKilled += OnSpawnedAgentKilled;
 
             //Say a phrase when spawned (with a start delay)
-            agent.gameObject.GetComponent<SayPhrase>().SayPhraseAtBeginning(Random.Range((float)1, (float)3));
+            agent.gameObject.GetComponent<SayPhrase>().SayPhraseAtBeginning();
 
             agents.Add(agent);
             ++id;
