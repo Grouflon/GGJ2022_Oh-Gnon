@@ -8,6 +8,13 @@ public class AgentManager : MonoBehaviour
     public AgentParameters AgentParameters;
     public Transform TopLeftCorner;
     public Transform BottomRightCorner;
+    public Agent AgentPrefab;
+
+    public delegate void AgentDelegate(Agent _agent);
+    public event AgentDelegate OnAgentKilled;
+
+    // Read only
+    public List<Agent> agents;
 
     // Singleton
     public static AgentManager Get()
@@ -20,6 +27,32 @@ public class AgentManager : MonoBehaviour
         return m_instance;
     }
     static AgentManager m_instance;
+
+    public void SpawnAgents(List<CharacterInfos> _characterInfos)
+    {
+        int id = 0;
+        foreach (CharacterInfos info in _characterInfos)
+        {
+            Vector3 position = GetRandomPointInGameArea();
+            Agent agent = Instantiate<Agent>(AgentPrefab, position, Quaternion.identity);
+            agent.id = id;
+            agent.infos = info;
+
+            agent.OnAgentKilled += OnSpawnedAgentKilled;
+
+            agents.Add(agent);
+            ++id;
+        }
+    }
+
+    public void ClearAllAgents()
+    {
+        foreach (Agent agent in agents)
+        {
+            Destroy(agent.gameObject);
+        }
+        agents.Clear();
+    }
 
     public Vector3 GetRandomPointInGameArea()
     {
@@ -46,4 +79,18 @@ public class AgentManager : MonoBehaviour
 
         return new Vector3(clampedX, clampedY, 0);
     }
+
+    void Start()
+    {
+        agents = new List<Agent>();
+    }
+
+    void OnSpawnedAgentKilled(Agent _agent)
+    {
+        bool result = agents.Remove(_agent);
+        Assert.IsTrue(result);
+
+        if (OnAgentKilled != null) OnAgentKilled(_agent);
+    }
+
 }

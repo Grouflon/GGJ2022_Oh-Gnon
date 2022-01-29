@@ -25,12 +25,20 @@ public class GameManager : MonoBehaviour
         set { Assert.IsTrue(m_gameState == GameState.Setup); m_localPlayer = value; }
     }
 
+    public int otherPlayer
+    {
+        get { return m_localPlayer == 0 ? 1 : 0; }
+    }
+
     public bool isWinning
     {
         get { return m_isWinning; }
     }
 
-    public List<Agent> agentsPresets;
+    public List<CharacterInfos> charactersPresets;
+
+    [Header("Debug")]
+    public bool quickStart = false;
 
     [Header("Internal")]
     public SetupScreenController setupScreenController; 
@@ -42,8 +50,9 @@ public class GameManager : MonoBehaviour
         {
             setGameState(GameState.GameOver);
         }
-        else if (false) // agents remaining == 0
+        else if (AgentManager.Get().agents.Count == 1)
         {
+            Assert.IsTrue(AgentManager.Get().agents[0].id == m_playerObjectives[m_localPlayer]);
             m_isWinning = true;
             setGameState(GameState.GameOver);
         }
@@ -83,6 +92,12 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Setup:
             {
+                AgentManager.Get().ClearAllAgents();
+                m_localPlayer = -1;
+                m_seed = -1;
+                m_playerObjectives[0] = -1;
+                m_playerObjectives[1] = -1;
+
                 setupScreenController.gameObject.SetActive(true);
             }
             break;
@@ -92,18 +107,18 @@ public class GameManager : MonoBehaviour
                 m_isWinning = false;
 
                 Random.InitState(m_seed);
-                m_playerObjectives[0] = Random.Range(0, agentsPresets.Count - 1);
-                m_playerObjectives[1] = Random.Range(0, agentsPresets.Count - 1);
+                m_playerObjectives[0] = Random.Range(0, charactersPresets.Count - 1);
+                m_playerObjectives[1] = Random.Range(0, charactersPresets.Count - 1);
 
-                Debug.Log(m_playerObjectives[0]);
-                Debug.Log(m_playerObjectives[1]);
+                AgentManager.Get().SpawnAgents(charactersPresets);
+                //Debug.Log(m_playerObjectives[0]);
+                //Debug.Log(m_playerObjectives[1]);
             }
             break;
 
             case GameState.GameOver:
             {
                 gameOverScreenController.gameObject.SetActive(true);
-                gameOverScreenController.updateScreen();
             }
             break;
         }
@@ -113,13 +128,22 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         m_playerObjectives = new int[2];
-        m_playerObjectives[0] = -1;
-        m_playerObjectives[1] = -1;
         
         setupScreenController.gameObject.SetActive(false);
         gameOverScreenController.gameObject.SetActive(false);
 
-        setGameState(GameState.Setup);
+        AgentManager.Get().OnAgentKilled += onAgentKilled;
+
+        if (quickStart)
+        {
+            m_localPlayer = 0;
+            m_seed = 0;
+            setGameState(GameState.Game);
+        }
+        else
+        {
+            setGameState(GameState.Setup);
+        }
     }
 
     // Update is called once per frame

@@ -13,6 +13,7 @@ public enum AgentState
 public class Agent : MonoBehaviour
 {
     public int id = -1;
+    public CharacterInfos infos;
 
     AgentState agentState = AgentState.IDLE;
     Vector3 destination;
@@ -21,10 +22,21 @@ public class Agent : MonoBehaviour
     float idleCurrentTimer;
     float idleTime;
 
+    public delegate void AgentDelegate(Agent _agent);
+    public event AgentDelegate OnAgentKilled;
+    AudioSource audioSource;
+
     void Start()
     {
         agentRigidbody = GetComponent<Rigidbody>();
         agentSpeed = AgentManager.Get().AgentParameters.Speed;
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    public void Kill()
+    {
+        if (OnAgentKilled != null) OnAgentKilled(this);
+        Destroy(gameObject);
     }
 
     public void SetState(AgentState state)
@@ -42,6 +54,10 @@ public class Agent : MonoBehaviour
         {
             idleCurrentTimer = 0f;
             idleTime = AgentManager.Get().GetRandomIdleTime();
+            if(audioSource != null && SoundManager.Get() != null)
+            {
+                SoundManager.Get().PlayRandomSound(SoundType.BARK, audioSource);
+            }
         }
     }
 
@@ -76,5 +92,11 @@ public class Agent : MonoBehaviour
                 Idle();
                 break;
         }
+    }
+
+    // Temporary, to be replaced by drop
+    private void OnMouseUp()
+    {
+        Kill();
     }
 }
