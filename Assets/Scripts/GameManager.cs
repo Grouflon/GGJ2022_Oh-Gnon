@@ -27,21 +27,7 @@ public class GameManager : MonoBehaviour
     [Header("Internal")]
     public SetupScreenController setupScreenController; 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        setupScreenController.gameObject.SetActive(false);
-
-        setGameState(GameState.Setup);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void setGameState(GameState _state)
+    public void setGameState(GameState _state)
     {
         if (m_gameState == _state)
             return;
@@ -79,6 +65,20 @@ public class GameManager : MonoBehaviour
             }
             break;
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        setupScreenController.gameObject.SetActive(false);
+
+        setGameState(GameState.Setup);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     GameState m_gameState = GameState.None;
