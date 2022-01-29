@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: 00_DuaLipoire
   m_EditorClassIdentifier: 
   Name: Dua Lipoire
+  skinProperty: base
+  Eyebrows: Neutral_Eyebrow
+  Chest: Chest_Pear
+  Eyes: Neutral_Eyes
+  Mouth: Mouth_Dumb
+  Hair: Pear_Hairs
+  Head: Pear_Head
+  Pants: Pear_Neutral_Pants
+  Genitals: Pear_Vulve
   Fruit: 1
   Cloth: 1
   Genital: 1
@@ -20,3 +29,4 @@ MonoBehaviour:
   Hat: 2
   FacialHair: 3
   Voice: 3
+  Relations: []

@@ -232,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8393190233145483992, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: charactersPresets.Array.size
-      value: 24
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8393190233145483992, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: charactersPresets.Array.data[0]
@@ -241,7 +241,7 @@ PrefabInstance:
     - target: {fileID: 8393190233145483992, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: charactersPresets.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 9752d2caa579c7840908bbd1159a8c05, type: 2}
+      objectReference: {fileID: 11400000, guid: 4aff2c08e2799ef41803596f70c509ce, type: 2}
     - target: {fileID: 8393190233145483992, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: charactersPresets.Array.data[2]
       value: 

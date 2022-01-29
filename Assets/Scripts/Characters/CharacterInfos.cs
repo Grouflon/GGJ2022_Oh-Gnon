@@ -13,10 +13,10 @@ public class CharacterInfos : ScriptableObject
     public string Eyebrows = "Neutral_Eyebrow";
     public string Chest = "Chest_Pear";
     public string Eyes = "Neutral_Eyes";
-    public string Mouth = "Mouth_Dumb";
+    public string Mouth = "Mouth Dumb";
     public string Hair = "Pear_Hairs";
     public string Head = "Pear_Head";
-    public string Pants = "Pear/Pear_Neutral_Pants";
+    public string Pants = "Pear_Neutral_Pants";
     public string Genitals = "Pear_Vulve";
 
     public EFruit Fruit;

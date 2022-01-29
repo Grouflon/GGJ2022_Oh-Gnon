@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "G\xE9raldine"
   skinProperty: base
+  Eyebrows: Neutral_Eyebrow
+  Chest: Pear/Chest_Pear
+  Eyes: Neutral_Eyes
+  Mouth: Mouth_Dumb
+  Hair: Pear_Hairs
+  Head: Pear_Head
+  Pants: Pear/Pear_Neutral_Pants
+  Genitals: Pear_Vulve
   Fruit: 1
   Cloth: 1
   Genital: 2

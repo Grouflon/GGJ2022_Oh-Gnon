@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
+using Spine;
 
 public enum AgentState
 {
@@ -33,21 +34,44 @@ public class Agent : MonoBehaviour
 
     void Start()
     {
-        SetState(AgentState.IDLE);
         agentRigidbody = GetComponent<Rigidbody>();
         agentSpeed = AgentManager.Get().AgentParameters.Speed;
 
         audioSource = GetComponent<AudioSource>();
         skeletonAnimation = GetComponentInChildren<SkeletonAnimation>(true);
 
-        //UpdateSkin(infos);
+        UpdateSkin(infos);
+
+        SetState(AgentState.IDLE);
+    }
+
+    static void AddSkin(SkeletonAnimation _skeletonAnimation, Skin _parentSkin, string _skinName)
+    {
+        Skin skin = _skeletonAnimation.Skeleton.Data.FindSkin(_skinName);
+        if (skin != null)
+        {
+            _parentSkin.AddSkin(skin);
+        }
+        else
+        {
+            Debug.LogError("Unknown skin " + _skinName);
+        }
     }
 
     void UpdateSkin(CharacterInfos _infos)
     {
-        skeletonAnimation.Skeleton.SetSkin("Eyebrows/" + _infos.Eyebrows);
-        skeletonAnimation.Skeleton.SetSkin("Chets/" + _infos.Chest);
-        skeletonAnimation.Skeleton.SetSkin("Eyes/" + _infos.Eyes);
+        Skin newSkin = new Skin("skin"); // 1. Create a new empty skin
+        AddSkin(skeletonAnimation, newSkin, "Eyebrows/" + _infos.Eyebrows);
+        AddSkin(skeletonAnimation, newSkin, "Chests/" + _infos.Chest);
+        AddSkin(skeletonAnimation, newSkin, "Eyes/" + _infos.Eyes);
+        AddSkin(skeletonAnimation, newSkin, "Mouths/" + _infos.Mouth);
+        AddSkin(skeletonAnimation, newSkin, "Hairs/" + _infos.Hair);
+        AddSkin(skeletonAnimation, newSkin, "Head/" + _infos.Head);
+        AddSkin(skeletonAnimation, newSkin, "Pants/" + _infos.Pants);
+        AddSkin(skeletonAnimation, newSkin, "Genitals/" + _infos.Genitals);
+        
+        skeletonAnimation.Skeleton.SetSkin(newSkin);
+        skeletonAnimation.Skeleton.SetSlotsToSetupPose();
     }
 
     public AgentState GetState()
@@ -73,12 +97,14 @@ public class Agent : MonoBehaviour
             //destination = AgentManager.Get().GetRandomPointInGameArea();
             destination = transform.position + (Vector3)Random.insideUnitCircle * AgentManager.Get().GetRandomWalkDistance();
             destination = AgentManager.Get().ClampPointInGameArea(destination);
+            skeletonAnimation.AnimationName = "Walk";
         }
 
         if (agentState == AgentState.IDLE)
         {
             idleCurrentTimer = 0f;
             idleTime = AgentManager.Get().GetRandomIdleTime();
+            skeletonAnimation.AnimationName = "Idle";
         }
     }
 
