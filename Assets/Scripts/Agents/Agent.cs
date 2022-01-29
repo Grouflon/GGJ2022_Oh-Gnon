@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 public enum AgentState
 {
@@ -28,12 +29,25 @@ public class Agent : MonoBehaviour
     public event AgentStateDelegate OnAgentStateChanged;
 
     AudioSource audioSource;
+    SkeletonAnimation skeletonAnimation;
 
     void Start()
     {
         SetState(AgentState.IDLE);
         agentRigidbody = GetComponent<Rigidbody>();
         agentSpeed = AgentManager.Get().AgentParameters.Speed;
+
+        audioSource = GetComponent<AudioSource>();
+        skeletonAnimation = GetComponentInChildren<SkeletonAnimation>(true);
+
+        //UpdateSkin(infos);
+    }
+
+    void UpdateSkin(CharacterInfos _infos)
+    {
+        skeletonAnimation.Skeleton.SetSkin("Eyebrows/" + _infos.Eyebrows);
+        skeletonAnimation.Skeleton.SetSkin("Chets/" + _infos.Chest);
+        skeletonAnimation.Skeleton.SetSkin("Eyes/" + _infos.Eyes);
     }
 
     public AgentState GetState()
