@@ -12,24 +12,67 @@ public enum AgentState
 
 public class Agent : MonoBehaviour
 {
-
     AgentState agentState = AgentState.IDLE;
-    Vector2 destination;
+    Vector3 destination;
+    Rigidbody agentRigidbody;
+    float agentSpeed;
+    float idleCurrentTimer;
+    float idleTime;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        agentRigidbody = GetComponent<Rigidbody>();
+        agentSpeed = AgentManager.Get().AgentParameters.Speed;
     }
 
     public void SetState(AgentState state)
     {
         agentState = state;
+
+        if(agentState == AgentState.WALK)
+        {
+            //destination = AgentManager.Get().GetRandomPointInGameArea();
+            destination = transform.position + (Vector3)Random.insideUnitCircle * AgentManager.Get().GetRandomWalkDistance();
+            destination = AgentManager.Get().ClampPointInGameArea(destination);
+        }
+
+        if (agentState == AgentState.IDLE)
+        {
+            idleCurrentTimer = 0f;
+            idleTime = AgentManager.Get().GetRandomIdleTime();
+        }
     }
 
-    // Update is called once per frame
+    void Idle()
+    {
+        idleCurrentTimer += Time.deltaTime;
+        if(idleCurrentTimer > idleTime)
+        {
+            SetState(AgentState.WALK);
+        }
+    }
+
+    void Walk()
+    {
+        Vector3 move = (destination - transform.position).normalized * agentSpeed;
+        transform.position = transform.position + move;
+        if(Vector3.Distance(transform.position, destination) < 0.1f)
+        {
+           SetState(AgentState.IDLE);
+        }
+    }
+
     void Update()
     {
-        
+        switch (agentState)
+        {
+            case (AgentState.WALK):
+                Walk();
+                break;
+
+            case (AgentState.IDLE):
+                Idle();
+                break;
+        }
     }
 }
