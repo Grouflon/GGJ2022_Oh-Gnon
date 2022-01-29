@@ -24,11 +24,13 @@ public class Agent : MonoBehaviour
 
     public delegate void AgentDelegate(Agent _agent);
     public event AgentDelegate OnAgentKilled;
+    AudioSource audioSource;
 
     void Start()
     {
         agentRigidbody = GetComponent<Rigidbody>();
         agentSpeed = AgentManager.Get().AgentParameters.Speed;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Kill()
@@ -52,6 +54,10 @@ public class Agent : MonoBehaviour
         {
             idleCurrentTimer = 0f;
             idleTime = AgentManager.Get().GetRandomIdleTime();
+            if(audioSource != null && SoundManager.Get() != null)
+            {
+                SoundManager.Get().PlayRandomSound(SoundType.BARK, audioSource);
+            }
         }
     }
 
