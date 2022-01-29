@@ -10,13 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51fc6dff54136374b8b419af6eecd84b, type: 3}
-  m_Name: LordTomatillo
+  m_Name: 21_ThomasTognon
   m_EditorClassIdentifier: 
-  Name: 
-  Fruit: 0
-  Cloth: 0
-  Genital: 0
-  Expression: 0
-  Hat: 0
-  FacialHair: 0
-  Voice: 0
+  Name: Thomas Tognon
+  skinProperty: base
+  Fruit: 2
+  Cloth: 2
+  Genital: 3
+  Expression: 5
+  Hat: 3
+  FacialHair: 1
+  Voice: 1
+  Relations:
+  - validCheck: 0
+    RelationType: 3
+    ID_Targets: 13000000
+    Unique_Phrases:
+    - Nooon ! Pas Thomas Farcie ! J'ai jamais pu lui avouer mon amour

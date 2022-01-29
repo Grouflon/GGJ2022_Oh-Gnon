@@ -4,36 +4,10 @@ using UnityEngine;
 using TMPro;
 
 
-[System.Serializable]
-public enum E_relationType
-{
-    Jumeaux,
-    FanDe,
-    Pote,
-    Amoureux,
-    Epoux,
-    Deteste,
-    Business,
-    Obeis
-}
-
-[System.Serializable]
-public struct Relation_Params
-{
-    public bool validCheck;
-    public E_relationType RelationType;
-    public SayPhrase[] Targets;
-    public string[] Phrases;
-}
-
-
 public class SayPhrase : MonoBehaviour
 {
     //public GameObject TextOverHead;
     private TextMeshProUGUI TextOverHead_Mesh;
-    public string CharacterName;
-    public int Character_ID;
-    public Relation_Params[] Relations;
 
     //Quiche phrase
     private string[] quichePhrase = new string[] 
@@ -64,7 +38,7 @@ public class SayPhrase : MonoBehaviour
 
     private void OnMouseOver()
     {
-        TextOverHead_Mesh.text = CharacterName;
+        //TextOverHead_Mesh.text = CharacterName;
         TextOverHead_Mesh.enabled = true;
     }
 
@@ -88,8 +62,8 @@ public class SayPhrase : MonoBehaviour
         }
         else
         {
-            Relation_Params currentRelation = CheckIfRelation(IDwhoDied);
-            if (currentRelation.validCheck)
+            //Relation_Params currentRelation = CheckIfRelation(IDwhoDied);
+               /*if (currentRelation.validCheck)
             {
                 switch (currentRelation.RelationType)
                 {
@@ -112,14 +86,14 @@ public class SayPhrase : MonoBehaviour
                     default:
                         break;
                 }
-            }
+            }*/
         }
 
         return PhraseToSay;
     }
 
 
-    private Relation_Params CheckIfRelation(int IDtoCheck)
+    /*private Relation_Params CheckIfRelation(int IDtoCheck)
     {
         Relation_Params relation_temp = new Relation_Params { };
         relation_temp.validCheck = false;
@@ -137,5 +111,5 @@ public class SayPhrase : MonoBehaviour
         }
 
         return relation_temp;
-    }
+    }*/
 }

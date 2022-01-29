@@ -10,13 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51fc6dff54136374b8b419af6eecd84b, type: 3}
-  m_Name: DuaLipoire
+  m_Name: 06_TerryPoirechett
   m_EditorClassIdentifier: 
-  Name: Dua Lipoire
+  Name: Terry Poirechett
+  skinProperty: base
   Fruit: 1
-  Cloth: 1
-  Genital: 1
-  Expression: 1
-  Hat: 2
+  Cloth: 2
+  Genital: 3
+  Expression: 5
+  Hat: 3
   FacialHair: 3
-  Voice: 3
+  Voice: 1
+  Relations:
+  - validCheck: 0
+    RelationType: 4
+    ID_Targets: 0a000000
+    Unique_Phrases:
+    - "La liqueur de cerise restera ma pr\xE9f\xE9r\xE9e. "

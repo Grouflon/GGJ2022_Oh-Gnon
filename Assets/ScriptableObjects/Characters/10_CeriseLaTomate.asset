@@ -10,13 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51fc6dff54136374b8b419af6eecd84b, type: 3}
-  m_Name: ThomasTognon
+  m_Name: 10_CeriseLaTomate
   m_EditorClassIdentifier: 
-  Name: 
-  Fruit: 0
-  Cloth: 0
-  Genital: 0
-  Expression: 0
-  Hat: 0
-  FacialHair: 0
-  Voice: 0
+  Name: Cerise la tomate
+  skinProperty: base
+  Fruit: 2
+  Cloth: 1
+  Genital: 1
+  Expression: 2
+  Hat: 1
+  FacialHair: 1
+  Voice: 1
+  Relations:
+  - validCheck: 0
+    RelationType: 4
+    ID_Targets: 06000000
+    Unique_Phrases:
+    - Terry P.

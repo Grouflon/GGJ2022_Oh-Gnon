@@ -10,13 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51fc6dff54136374b8b419af6eecd84b, type: 3}
-  m_Name: ThomasFarcie
+  m_Name: 13_VincentBolognaise
   m_EditorClassIdentifier: 
-  Name: 
-  Fruit: 0
-  Cloth: 0
-  Genital: 0
-  Expression: 0
-  Hat: 0
-  FacialHair: 0
-  Voice: 0
+  Name: Vincent Bolognaise
+  skinProperty: base
+  Fruit: 2
+  Cloth: 1
+  Genital: 2
+  Expression: 3
+  Hat: 2
+  FacialHair: 1
+  Voice: 2
+  Relations:
+  - validCheck: 0
+    RelationType: 6
+    ID_Targets: 05000000
+    Unique_Phrases:
+    - Mince, Edouard est mort avant que j'ai pu le plumer.

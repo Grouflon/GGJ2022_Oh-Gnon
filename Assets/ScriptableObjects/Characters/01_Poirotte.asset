@@ -10,13 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51fc6dff54136374b8b419af6eecd84b, type: 3}
-  m_Name: TomTom
+  m_Name: 01_Poirotte
   m_EditorClassIdentifier: 
-  Name: 
-  Fruit: 0
-  Cloth: 0
-  Genital: 0
-  Expression: 0
-  Hat: 0
-  FacialHair: 0
-  Voice: 0
+  Name: Poirotte
+  skinProperty: base
+  Fruit: 1
+  Cloth: 1
+  Genital: 1
+  Expression: 4
+  Hat: 3
+  FacialHair: 1
+  Voice: 1
+  Relations:
+  - validCheck: 0
+    RelationType: 0
+    ID_Targets: 03000000
+    Unique_Phrases: []
