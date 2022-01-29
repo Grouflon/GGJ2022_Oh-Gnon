@@ -27,12 +27,13 @@
  * THE SPINE RUNTIMES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using UnityEditor;
 using UnityEngine;
+using UnityEditor;
+
+using System.Reflection;
+using System;
 
 namespace Spine.Unity.Editor {
 	using Editor = UnityEditor.Editor;
@@ -96,6 +97,9 @@ namespace Spine.Unity.Editor {
 					preview.PlayPauseAnimation(animationNameProperty.stringValue, true);
 			}
 
+			lastSkeletonDataAsset = ThisSkeletonDataAsset;
+			lastSkeletonData = ThisSkeletonDataAsset.GetSkeletonData(true);
+
 			//EditorGUILayout.HelpBox(AnimationReferenceAssetEditor.InspectorHelpText, MessageType.Info, true);
 			EditorGUILayout.Space();
 			EditorGUI.BeginChangeCheck();
@@ -124,9 +128,6 @@ namespace Spine.Unity.Editor {
 					}
 				}
 			}
-
-			lastSkeletonDataAsset = ThisSkeletonDataAsset;
-			lastSkeletonData = ThisSkeletonDataAsset.GetSkeletonData(true);
 		}
 
 		#region Preview Handlers
