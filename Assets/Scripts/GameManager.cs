@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
     public SetupScreenController setupScreenController; 
     public GameOverScreenController gameOverScreenController;
 
+    public GameObject dropZonesContainer;
+
     public void onAgentKilled(Agent _agent)
     {
         if (m_playerObjectives[m_localPlayer] == _agent.id)
@@ -99,6 +101,7 @@ public class GameManager : MonoBehaviour
                 m_playerObjectives[1] = -1;
 
                 setupScreenController.gameObject.SetActive(true);
+                dropZonesContainer.SetActive(false);
             }
             break;
 
@@ -113,6 +116,8 @@ public class GameManager : MonoBehaviour
                 AgentManager.Get().SpawnAgents(charactersPrefabs);
                 //Debug.Log(m_playerObjectives[0]);
                 //Debug.Log(m_playerObjectives[1]);
+
+                dropZonesContainer.SetActive(true);
             }
             break;
 
