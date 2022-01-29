@@ -12,6 +12,8 @@ public enum AgentState
 
 public class Agent : MonoBehaviour
 {
+    public int id = -1;
+
     AgentState agentState = AgentState.IDLE;
     Vector3 destination;
     Rigidbody agentRigidbody;

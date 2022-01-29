@@ -28,7 +28,7 @@ public class SetupScreenController : MonoBehaviour
             updateUI();
         });
 
-        seedField.onSubmit.AddListener(
+        seedField.onValueChanged.AddListener(
         (string _text) => {
             updateUI();
         });

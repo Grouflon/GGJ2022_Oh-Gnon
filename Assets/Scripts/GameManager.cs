@@ -7,7 +7,8 @@ public enum GameState
 {
     None,
     Setup,
-    Game
+    Game,
+    GameOver
 }
 
 public class GameManager : MonoBehaviour
@@ -24,8 +25,29 @@ public class GameManager : MonoBehaviour
         set { Assert.IsTrue(m_gameState == GameState.Setup); m_localPlayer = value; }
     }
 
+    public bool isWinning
+    {
+        get { return m_isWinning; }
+    }
+
+    public List<Agent> agentsPresets;
+
     [Header("Internal")]
     public SetupScreenController setupScreenController; 
+    public GameOverScreenController gameOverScreenController;
+
+    public void onAgentKilled(Agent _agent)
+    {
+        if (m_playerObjectives[m_localPlayer] == _agent.id)
+        {
+            setGameState(GameState.GameOver);
+        }
+        else if (false) // agents remaining == 0
+        {
+            m_isWinning = true;
+            setGameState(GameState.GameOver);
+        }
+    }
 
     public void setGameState(GameState _state)
     {
@@ -43,7 +65,13 @@ public class GameManager : MonoBehaviour
 
             case GameState.Game:
             {
+                
+            }
+            break;
 
+            case GameState.GameOver:
+            {
+                gameOverScreenController.gameObject.SetActive(false);
             }
             break;
         }
@@ -61,7 +89,21 @@ public class GameManager : MonoBehaviour
 
             case GameState.Game:
             {
-                
+                m_isWinning = false;
+
+                Random.InitState(m_seed);
+                m_playerObjectives[0] = Random.Range(0, agentsPresets.Count - 1);
+                m_playerObjectives[1] = Random.Range(0, agentsPresets.Count - 1);
+
+                Debug.Log(m_playerObjectives[0]);
+                Debug.Log(m_playerObjectives[1]);
+            }
+            break;
+
+            case GameState.GameOver:
+            {
+                gameOverScreenController.gameObject.SetActive(true);
+                gameOverScreenController.updateScreen();
             }
             break;
         }
@@ -70,7 +112,12 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_playerObjectives = new int[2];
+        m_playerObjectives[0] = -1;
+        m_playerObjectives[1] = -1;
+        
         setupScreenController.gameObject.SetActive(false);
+        gameOverScreenController.gameObject.SetActive(false);
 
         setGameState(GameState.Setup);
     }
@@ -85,6 +132,8 @@ public class GameManager : MonoBehaviour
     
     int m_seed = -1;
     int m_localPlayer = -1;
+    int[] m_playerObjectives;
+    bool m_isWinning = false;
 
     // Singleton
     public static GameManager Get()
