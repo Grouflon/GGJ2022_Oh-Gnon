@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
-using Spine.Unity;
+
 using Spine;
+using Spine.Unity;
 
 public enum AgentState
 {
@@ -37,10 +39,17 @@ public class Agent : MonoBehaviour
         agentRigidbody = GetComponent<Rigidbody>();
         agentSpeed = AgentManager.Get().AgentParameters.Speed;
 
+        DragManager.Get().OnStartDragging += OnAgentGrabbed;
+
         audioSource = GetComponent<AudioSource>();
         skeletonAnimation = GetComponentInChildren<SkeletonAnimation>(true);
 
         SetState(AgentState.IDLE);
+    }
+
+    private void OnDestroy()
+    {
+        DragManager.Get().OnStartDragging -= OnAgentGrabbed;
     }
 
     public AgentState GetState()
@@ -64,7 +73,7 @@ public class Agent : MonoBehaviour
         if (agentState == AgentState.WALK)
         {
             //destination = AgentManager.Get().GetRandomPointInGameArea();
-            destination = transform.position + (Vector3)Random.insideUnitCircle * AgentManager.Get().GetRandomWalkDistance();
+            destination = transform.position + (Vector3) Random.insideUnitCircle * AgentManager.Get().GetRandomWalkDistance();
             destination = AgentManager.Get().ClampPointInGameArea(destination);
             skeletonAnimation.AnimationName = "Walk";
         }
@@ -85,7 +94,7 @@ public class Agent : MonoBehaviour
     void Idle()
     {
         idleCurrentTimer += Time.deltaTime;
-        if(idleCurrentTimer > idleTime)
+        if (idleCurrentTimer > idleTime)
         {
             SetState(AgentState.WALK);
         }
@@ -95,12 +104,11 @@ public class Agent : MonoBehaviour
     {
         Vector3 move = (destination - transform.position).normalized * agentSpeed;
         transform.position = transform.position + move;
-        if(Vector3.Distance(transform.position, destination) < 0.1f)
+        if (Vector3.Distance(transform.position, destination) < 0.1f)
         {
-           SetState(AgentState.IDLE);
+            SetState(AgentState.IDLE);
         }
     }
-
 
     void Update()
     {
@@ -114,5 +122,10 @@ public class Agent : MonoBehaviour
                 Idle();
                 break;
         }
+    }
+
+    private void OnAgentGrabbed(Agent p_agent)
+    {
+        Debug.Log($"Agent got grabbed ({p_agent.gameObject.name})");
     }
 }

@@ -1,15 +1,35 @@
+using System;
 using System.Linq;
 
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class DragManager : MonoBehaviour
 {
+    public Action<Agent> OnStartDragging;
+
     private DropZone m_currentDropZone = null;
     private Draggable m_currentDraggable;
 
+    // Singleton
+    public static DragManager Get()
+    {
+        if (!m_instance)
+        {
+            m_instance = FindObjectOfType<DragManager>();
+        }
+        Assert.IsNotNull(m_instance);
+        return m_instance;
+    }
+    static DragManager m_instance;
+
     public void OnStartDrag(Draggable p_draggable)
     {
+        if (m_currentDraggable == p_draggable)
+            return;
+
         m_currentDraggable = p_draggable;
+        OnStartDragging?.Invoke(m_currentDraggable.GetComponent<Agent>());
     }
 
     public void OnDrop(Draggable p_draggable)
