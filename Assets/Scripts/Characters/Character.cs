@@ -1,14 +1,14 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Character", menuName = "Data/Character", order = 0)]
-public class Character : ScriptableObject
+using Spine;
+using Spine.Unity;
+
+public class Character : MonoBehaviour
 {
-    public string Name;
-    public EFruit Fruit;
-    public ECloth Cloth;
-    public EGenital Genital;
-    public EExpression Expression;
-    public EHat Hat;
-    public EFacialHair FacialHair;
-    public EVoice Voice;
+    public void SetCharacter(CharacterInfos p_characterInfos)
+    {
+        var skeletonGraphic = GetComponent<SkeletonGraphic>();
+        var skeleton = skeletonGraphic.Skeleton;
+        skeleton.SetSkin(p_characterInfos.skinProperty);
+    }
 }
