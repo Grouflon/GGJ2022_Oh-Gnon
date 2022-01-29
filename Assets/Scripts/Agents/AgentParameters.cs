@@ -10,6 +10,7 @@ public class AgentParameters : ScriptableObject
     public float MaxWalkDistance = 3;
     public float MinTimeBetweenWalks = 1;
     public float MaxTimeBetweenWalks = 5;
-
+    public float MinTimeBetweenBarks = 3f;
+    public float MaxTimeBetweenBarks = 15f;
 }
 

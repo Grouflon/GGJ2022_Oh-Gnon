@@ -67,6 +67,11 @@ public class AgentManager : MonoBehaviour
         return Random.Range(AgentParameters.MinTimeBetweenWalks, AgentParameters.MaxTimeBetweenWalks);
     }
 
+    public float GetRandomBarkTime()
+    {
+        return Random.Range(AgentParameters.MinTimeBetweenBarks, AgentParameters.MaxTimeBetweenBarks);
+    }
+
     public float GetRandomWalkDistance()
     {
         return Random.Range(AgentParameters.MinWalkDistance, AgentParameters.MaxWalkDistance);

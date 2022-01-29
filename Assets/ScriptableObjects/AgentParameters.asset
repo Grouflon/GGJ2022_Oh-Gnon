@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: AgentParameters
   m_EditorClassIdentifier: 
   Speed: 0.01
+  MinWalkDistance: 3
+  MaxWalkDistance: 3
   MinTimeBetweenWalks: 1
   MaxTimeBetweenWalks: 5
+  MinTimeBetweenBarks: 10
+  MaxTimeBetweenBarks: 15
