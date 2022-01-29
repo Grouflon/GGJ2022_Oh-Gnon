@@ -19,6 +19,7 @@ public class DragManager : MonoBehaviour
             return;
 
         m_currentDraggable.GetComponent<Agent>().Kill();
+        m_currentDraggable = null;
     }
 
     private void Update()
@@ -29,6 +30,9 @@ public class DragManager : MonoBehaviour
             m_currentDropZone.Unselect();
             m_currentDropZone = null;
         }
+
+        if (m_currentDraggable == null)
+            return;
 
         // Check for drop zones under mouse
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
