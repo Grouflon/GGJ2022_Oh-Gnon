@@ -11,12 +11,13 @@ public class SayPhrase : MonoBehaviour
     private Agent m_Agent;
     public PhraseArrays m_PhraseArrays;
     private bool isShowingPhrase = false;
-    private float DelayBeforeStart = 0;
+    private float DelayBefore = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         TextOverHead_Mesh = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        TextOverHead_Mesh.text = "--";
         m_Agent = gameObject.GetComponent<Agent>();
         
     }
@@ -50,7 +51,7 @@ public class SayPhrase : MonoBehaviour
         //TextOverHead_Mesh.enabled = false;
     }
 
-    public void SayPhraseAtBeginning(float Delay)
+    public void SayPhraseAtBeginning(float DelayBeforeStart)
     {
         string PhraseToSay = "NoPhraseToSay";
 
@@ -59,7 +60,7 @@ public class SayPhrase : MonoBehaviour
         else
             PhraseToSay = "";
 
-        DelayBeforeStart = Delay;
+        DelayBefore = DelayBeforeStart;
         StartCoroutine("ShowPhrase", PhraseToSay);
     }
 
@@ -186,11 +187,11 @@ public class SayPhrase : MonoBehaviour
         string TempString = "";
 
 
-        yield return new WaitForSeconds(DelayBeforeStart);
+        yield return new WaitForSeconds(DelayBefore);
 
         isShowingPhrase = true;
         TextOverHead_Mesh.text = "";
-        TextOverHead_Mesh.enabled = true;
+        //TextOverHead_Mesh.enabled = true;
 
         foreach (char letter in Text_Array)
         {
@@ -204,7 +205,7 @@ public class SayPhrase : MonoBehaviour
 
 
         TextOverHead_Mesh.text = "";
-        TextOverHead_Mesh.enabled = false;
+        //TextOverHead_Mesh.enabled = false;
 
         isShowingPhrase = false;
     }
