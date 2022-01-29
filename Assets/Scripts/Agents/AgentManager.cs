@@ -8,7 +8,6 @@ public class AgentManager : MonoBehaviour
     public AgentParameters AgentParameters;
     public Transform TopLeftCorner;
     public Transform BottomRightCorner;
-    public Agent AgentPrefab;
 
     public delegate void AgentDelegate(Agent _agent);
     public event AgentDelegate OnAgentKilled;
@@ -28,15 +27,14 @@ public class AgentManager : MonoBehaviour
     }
     static AgentManager m_instance;
 
-    public void SpawnAgents(List<CharacterInfos> _characterInfos)
+    public void SpawnAgents(List<Agent> _charactersPrefabs)
     {
         int id = 0;
-        foreach (CharacterInfos info in _characterInfos)
+        foreach (Agent prefab in _charactersPrefabs)
         {
             Vector3 position = GetRandomPointInGameArea();
-            Agent agent = Instantiate<Agent>(AgentPrefab, position, Quaternion.identity);
+            Agent agent = Instantiate<Agent>(prefab, position, Quaternion.identity);
             agent.id = id;
-            agent.infos = info;
 
             agent.OnAgentKilled += OnSpawnedAgentKilled;
 

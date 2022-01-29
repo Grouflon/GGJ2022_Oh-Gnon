@@ -40,38 +40,7 @@ public class Agent : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         skeletonAnimation = GetComponentInChildren<SkeletonAnimation>(true);
 
-        UpdateSkin(infos);
-
         SetState(AgentState.IDLE);
-    }
-
-    static void AddSkin(SkeletonAnimation _skeletonAnimation, Skin _parentSkin, string _skinName)
-    {
-        Skin skin = _skeletonAnimation.Skeleton.Data.FindSkin(_skinName);
-        if (skin != null)
-        {
-            _parentSkin.AddSkin(skin);
-        }
-        else
-        {
-            Debug.LogError("Unknown skin " + _skinName);
-        }
-    }
-
-    void UpdateSkin(CharacterInfos _infos)
-    {
-        Skin newSkin = new Skin("skin"); // 1. Create a new empty skin
-        AddSkin(skeletonAnimation, newSkin, "Eyebrows/" + _infos.Eyebrows);
-        AddSkin(skeletonAnimation, newSkin, "Chests/" + _infos.Chest);
-        AddSkin(skeletonAnimation, newSkin, "Eyes/" + _infos.Eyes);
-        AddSkin(skeletonAnimation, newSkin, "Mouths/" + _infos.Mouth);
-        AddSkin(skeletonAnimation, newSkin, "Hairs/" + _infos.Hair);
-        AddSkin(skeletonAnimation, newSkin, "Head/" + _infos.Head);
-        AddSkin(skeletonAnimation, newSkin, "Pants/" + _infos.Pants);
-        AddSkin(skeletonAnimation, newSkin, "Genitals/" + _infos.Genitals);
-        
-        skeletonAnimation.Skeleton.SetSkin(newSkin);
-        skeletonAnimation.Skeleton.SetSlotsToSetupPose();
     }
 
     public AgentState GetState()

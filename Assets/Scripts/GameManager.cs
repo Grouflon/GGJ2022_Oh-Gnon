@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         get { return m_isWinning; }
     }
 
-    public List<CharacterInfos> charactersPresets;
+    public List<Agent> charactersPrefabs;
 
     [Header("Debug")]
     public bool quickStart = false;
@@ -107,10 +107,10 @@ public class GameManager : MonoBehaviour
                 m_isWinning = false;
 
                 Random.InitState(m_seed);
-                m_playerObjectives[0] = Random.Range(0, charactersPresets.Count - 1);
-                m_playerObjectives[1] = Random.Range(0, charactersPresets.Count - 1);
+                m_playerObjectives[0] = Random.Range(0, charactersPrefabs.Count - 1);
+                m_playerObjectives[1] = Random.Range(0, charactersPrefabs.Count - 1);
 
-                AgentManager.Get().SpawnAgents(charactersPresets);
+                AgentManager.Get().SpawnAgents(charactersPrefabs);
                 //Debug.Log(m_playerObjectives[0]);
                 //Debug.Log(m_playerObjectives[1]);
             }

@@ -423,7 +423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c1d55f38d5e3a4e99146792efdc9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charactersPresets: []
+  charactersPrefabs:
+  - {fileID: 7881437210204935183, guid: 72fed93e9d7f59b4a895dcc0da8657d1, type: 3}
+  - {fileID: 7881437210204935183, guid: 2a72be2766112d7469f1df5c4d2f4134, type: 3}
   quickStart: 1
   setupScreenController: {fileID: 1637083011}
   gameOverScreenController: {fileID: 7431966788649471138}
