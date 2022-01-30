@@ -14,7 +14,7 @@ public class SayPhrase : MonoBehaviour
     private Agent m_Agent;
     public PhraseArrays m_PhraseArrays;
     private bool isShowingPhrase = false;
-    private bool isShowingName = false;
+    //private bool isShowingName = false;
 
     private float DelayBefore = 0;
     private float typeSpeed = 0.5f;
@@ -28,7 +28,7 @@ public class SayPhrase : MonoBehaviour
 
         m_Agent = gameObject.GetComponent<Agent>();
 
-        m_Agent.OnAgentStateChanged += WhenPickedUp;
+        //m_Agent.OnAgentStateChanged += WhenPickedUp;
 
         Bubble.SetActive(false);
 
@@ -95,7 +95,7 @@ public class SayPhrase : MonoBehaviour
             if (Random.Range(0, 100) <= 20)
                 PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhrasePanic);
 
-            DelayBefore = 0;
+            DelayBefore = Random.Range(0f, 0.5f);
             typeSpeed = 0.2f;
             duration = 1.5f;
             StartCoroutine("ShowPhrase", PhraseToSay);
@@ -109,15 +109,31 @@ public class SayPhrase : MonoBehaviour
         {
             string PhraseToSay = "";
 
-            if (IDwhoDied == 21) //ID de QUICHE
+            if (IDwhoDied == 20) //ID de QUICHE
             {
-                if (Random.Range(0, 100) <= 20)
+                if (Random.Range(0, 100) <= 30)
                     PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseQuiche);
             }
             else
             {
-                S_Relation_Params currentRelation = CheckIfRelation(IDwhoDied);
-                if (currentRelation.validCheck)
+                S_Relation_Params currentRelation = new S_Relation_Params { };
+
+                bool checkrelation = false;
+
+                foreach (var relation in m_Agent.infos.Relations)
+                {
+                    foreach (int target in relation.ID_Targets)
+                    {
+                        if (target == IDwhoDied)
+                        {
+                            currentRelation = relation;
+                            checkrelation = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (checkrelation)
                 {
                     switch (currentRelation.RelationType)
                     {
@@ -164,7 +180,7 @@ public class SayPhrase : MonoBehaviour
                 }
             }
 
-            DelayBefore = 0;
+            DelayBefore = Random.Range(0f, 0.5f);
             typeSpeed = 0.5f;
             duration = 3f;
             StartCoroutine("ShowPhrase", PhraseToSay);
@@ -174,8 +190,7 @@ public class SayPhrase : MonoBehaviour
 
     private S_Relation_Params CheckIfRelation(int IDtoCheck)
     {
-        S_Relation_Params relation_temp = new S_Relation_Params { };
-        relation_temp.validCheck = false;
+        S_Relation_Params relation_temp = new S_Relation_Params {};
 
         foreach (var relation in m_Agent.infos.Relations)
         {
@@ -183,7 +198,6 @@ public class SayPhrase : MonoBehaviour
             {
                 if(target == IDtoCheck)
                 {
-                    relation_temp.validCheck = true;
                     relation_temp = relation;
                 }
             }

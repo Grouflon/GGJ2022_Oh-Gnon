@@ -14,7 +14,6 @@ public enum E_relationType
 [System.Serializable]
 public struct S_Relation_Params
 {
-    public bool validCheck;
     public E_relationType RelationType;
     public int[] ID_Targets;
     public string[] Unique_Phrases;
