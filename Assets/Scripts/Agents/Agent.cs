@@ -139,7 +139,9 @@ public class Agent : MonoBehaviour
 
             if (Random.Range(0f, 1f) > 0.9f)
             {
-                StartCoroutine(_PlayRandomIdle());
+                var randIdle = idles[Random.Range(0, idles.Count)];
+                skeletonAnimation.AnimationName = randIdle.Anim;
+                idleTime += randIdle.Duration;
             }
         }
 
@@ -155,14 +157,6 @@ public class Agent : MonoBehaviour
                 otherAgent.OnOtherAgentGrabbed(this);
             }
         }
-    }
-
-    private IEnumerator _PlayRandomIdle()
-    {
-        var randIdle = idles[Random.Range(0, idles.Count)];
-        skeletonAnimation.AnimationName = randIdle.Anim;
-        idleTime += randIdle.Duration;
-        yield return new WaitForSeconds(randIdle.Duration);
     }
 
     void Idle()
