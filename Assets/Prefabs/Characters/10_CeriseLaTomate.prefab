@@ -57,15 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Eyes
-      value: Chocked_Eyes
-      objectReference: {fileID: 0}
-    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
-      propertyPath: Hair
-      value: Tomatoes_Hairs
+      value: Neutral_Eyes
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Hats
-      value: Tomatoe_Crown
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Head
@@ -73,15 +69,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Chest
-      value: Chest_Tomatoes_Shirt4
+      value: Chest_Tomatoes_Shirt1
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Hairs
-      value: 
+      value: Tomatoes_Hairs
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Mouth
-      value: Mouth_Dumb
+      value: Mouth_Sad
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Pants
@@ -93,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Genitals
-      value: Tomatoe_Vulve
+      value: Tomatoes_Zizi
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Mustaches
@@ -102,10 +98,10 @@ PrefabInstance:
     - target: {fileID: 5697866203614312016, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: infos
       value: 
-      objectReference: {fileID: 11400000, guid: 11bfacb295dfb0649983670486e01460, type: 2}
+      objectReference: {fileID: 11400000, guid: dea35e49db5ac8643b457f202b5935d1, type: 2}
     - target: {fileID: 6383022333730228090, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_Name
-      value: 17_LadyMarmande
+      value: 10_CeriseLaTomate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
