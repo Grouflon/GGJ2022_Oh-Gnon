@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     public SetupScreenController setupScreenController; 
     public GameOverScreenController gameOverScreenController;
     public VignetteController vignetteController;
+    public AgentManager agentManager;
 
     public GameObject dropZonesContainer;
 
@@ -131,6 +132,11 @@ public class GameManager : MonoBehaviour
             case GameState.GameOver:
             {
                 gameOverScreenController.gameObject.SetActive(true);
+                foreach (var agent in agentManager.agents)
+                {
+                        Destroy(agent.gameObject.GetComponent<Draggable>());
+                        Destroy(agent.gameObject.GetComponent<Collider2D>());
+                }
             }
             break;
         }
