@@ -441,6 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2f151ff21cf8144a5f0df6c63f921d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_explosionFX: {fileID: 3619070796288349985, guid: 93cf31774d73b794db58d62538556c9d, type: 3}
   m_defaultColor: {r: 0.41176474, g: 1, b: 0.75294125, a: 1}
   m_overColor: {r: 1, g: 0.3160377, b: 0.3160377, a: 1}
 --- !u!61 &8968693151142935813
@@ -650,6 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2f151ff21cf8144a5f0df6c63f921d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_explosionFX: {fileID: 3619070796288349985, guid: 93cf31774d73b794db58d62538556c9d, type: 3}
   m_defaultColor: {r: 0.41176474, g: 1, b: 0.75294125, a: 1}
   m_overColor: {r: 1, g: 0.3160377, b: 0.3160377, a: 1}
 --- !u!61 &2617992468654139745
@@ -776,6 +778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2f151ff21cf8144a5f0df6c63f921d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_explosionFX: {fileID: 3619070796288349985, guid: 93cf31774d73b794db58d62538556c9d, type: 3}
   m_defaultColor: {r: 0.41176474, g: 1, b: 0.75294125, a: 1}
   m_overColor: {r: 1, g: 0.3160377, b: 0.3160377, a: 1}
 --- !u!61 &5434712954601688621

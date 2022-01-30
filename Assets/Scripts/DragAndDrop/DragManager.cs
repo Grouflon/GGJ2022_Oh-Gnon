@@ -34,9 +34,14 @@ public class DragManager : MonoBehaviour
 
     public void OnDrop(Draggable p_draggable)
     {
+        if (p_draggable == null)
+            return;
+
         if (p_draggable != m_currentDraggable ||
             m_currentDropZone == null)
             return;
+
+        m_currentDropZone.Use();
 
         m_currentDraggable.GetComponent<Agent>().Kill();
         m_currentDraggable = null;
