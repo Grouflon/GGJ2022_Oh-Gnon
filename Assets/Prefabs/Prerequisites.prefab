@@ -1088,7 +1088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2f151ff21cf8144a5f0df6c63f921d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fatality: 0
+  Fatality: 1
   m_playExplosion: 0
   m_explosionFX: {fileID: 3619070796288349985, guid: 93cf31774d73b794db58d62538556c9d, type: 3}
   m_idleAnimation: Pentacle_Idle
