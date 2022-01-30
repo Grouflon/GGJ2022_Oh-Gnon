@@ -51,16 +51,16 @@ public class SayPhrase : MonoBehaviour
         //TextOverHead_Mesh.enabled = false;
     }
 
-    public void SayPhraseAtBeginning(float DelayBeforeStart)
+    public void SayPhraseAtBeginning()
     {
         string PhraseToSay = "NoPhraseToSay";
 
-        if (Random.Range(0, 100) <= 20)
+        if (Random.Range(0, 100) <= 50)
             PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseBonjour);
         else
             PhraseToSay = "";
 
-        DelayBefore = DelayBeforeStart;
+        DelayBefore = Random.Range((float)1, (float)3);
         StartCoroutine("ShowPhrase", PhraseToSay);
     }
 
