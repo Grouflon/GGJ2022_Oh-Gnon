@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: Genitals
       value: Pear_Vulve
       objectReference: {fileID: 0}
+    - target: {fileID: 2058931235690014923, guid: 2967f59a6f289b44a94764737ad42842, type: 3}
+      propertyPath: infos
+      value: 
+      objectReference: {fileID: 11400000, guid: 734eea5c965b96e47bd8cb39b9d6dd3f, type: 2}
     - target: {fileID: 5171112660983411812, guid: 2967f59a6f289b44a94764737ad42842, type: 3}
       propertyPath: m_RootOrder
       value: 0

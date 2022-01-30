@@ -71,5 +71,9 @@ PrefabInstance:
       propertyPath: Pants
       value: Tomatoes_Without_Pants
       objectReference: {fileID: 0}
+    - target: {fileID: 6691298761007724552, guid: adb1a0293e05f364085e6eaa7bd50ac1, type: 3}
+      propertyPath: infos
+      value: 
+      objectReference: {fileID: 11400000, guid: e248d18c54c30934c8ef764ac49a675b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb1a0293e05f364085e6eaa7bd50ac1, type: 3}

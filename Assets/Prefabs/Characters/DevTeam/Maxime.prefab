@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: Mustaches
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7881437210204935183, guid: 1937dc00192d8c644b84f6dd7beab5cd, type: 3}
+      propertyPath: infos
+      value: 
+      objectReference: {fileID: 11400000, guid: 303922c7235e96c468a3d0f7d5975172, type: 2}
     - target: {fileID: 8856208285172098341, guid: 1937dc00192d8c644b84f6dd7beab5cd, type: 3}
       propertyPath: m_Name
       value: Maxime

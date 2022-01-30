@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: Genitals
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7881437210204935183, guid: f8c6a2397230e9749957c590d051047d, type: 3}
+      propertyPath: infos
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c6b4f727af8a4946aab4c6db8126f33, type: 2}
     - target: {fileID: 8856208285172098341, guid: f8c6a2397230e9749957c590d051047d, type: 3}
       propertyPath: m_Name
       value: Clement

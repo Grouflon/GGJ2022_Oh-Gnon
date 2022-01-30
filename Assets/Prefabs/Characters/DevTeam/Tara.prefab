@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: Genitals
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2058931235690014923, guid: 2967f59a6f289b44a94764737ad42842, type: 3}
+      propertyPath: infos
+      value: 
+      objectReference: {fileID: 11400000, guid: 12e7f7bad83a5044183452d54a2219de, type: 2}
     - target: {fileID: 5171112660983411812, guid: 2967f59a6f289b44a94764737ad42842, type: 3}
       propertyPath: m_RootOrder
       value: 0

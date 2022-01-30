@@ -63,5 +63,9 @@ PrefabInstance:
       propertyPath: Chest
       value: Chest_Tomatoes_Shirt2
       objectReference: {fileID: 0}
+    - target: {fileID: 6691298761007724552, guid: adb1a0293e05f364085e6eaa7bd50ac1, type: 3}
+      propertyPath: infos
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b8a5608cc17d9e40ab16e1a369de0f6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb1a0293e05f364085e6eaa7bd50ac1, type: 3}
