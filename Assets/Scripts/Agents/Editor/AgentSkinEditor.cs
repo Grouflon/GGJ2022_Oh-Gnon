@@ -1,4 +1,5 @@
 using UnityEngine;
+using Spine.Unity;
 
 using UnityEditor;
 
@@ -10,7 +11,7 @@ class AgentSkinEditor : Editor
     void OnEnable()
     {
         agentSkin = target as AgentSkin;
-        agentSkin.UpdateSkin();
+        agentSkin.UpdateSkin(agentSkin.GetComponentInChildren<SkeletonAnimation>(true));
     }
 
     public override void OnInspectorGUI()
@@ -19,7 +20,7 @@ class AgentSkinEditor : Editor
 
         if (GUILayout.Button("Apply Skin"))
         {
-            agentSkin.UpdateSkin();
+            agentSkin.UpdateSkin(agentSkin.GetComponentInChildren<SkeletonAnimation>(true));
         }
     }
 }
