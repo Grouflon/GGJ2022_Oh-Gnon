@@ -6,6 +6,7 @@ using UnityEngine.Assertions;
 public enum GameState
 {
     None,
+    Menu,
     Setup,
     Game,
     GameOver
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     public bool quickStart = false;
 
     [Header("Internal")]
+    public MenuController menuController; 
     public SetupScreenController setupScreenController; 
     public GameOverScreenController gameOverScreenController;
     public VignetteController vignetteController;
@@ -75,6 +77,12 @@ public class GameManager : MonoBehaviour
         // EXIT STATES
         switch (m_gameState)
         {
+            case GameState.Menu:
+            {
+                menuController.gameObject.SetActive(false);
+            }
+            break;
+
             case GameState.Setup:
             {
                 setupScreenController.gameObject.SetActive(false);
@@ -84,12 +92,14 @@ public class GameManager : MonoBehaviour
             case GameState.Game:
             {
                 vignetteController.gameObject.SetActive(false);
+                dropZonesContainer.SetActive(false);
             }
             break;
 
             case GameState.GameOver:
             {
                 gameOverScreenController.gameObject.SetActive(false);
+                dropZonesContainer.SetActive(false);
             }
             break;
         }
@@ -99,6 +109,12 @@ public class GameManager : MonoBehaviour
         // ENTER STATES
         switch (m_gameState)
         {
+            case GameState.Menu:
+            {
+                menuController.gameObject.SetActive(true);
+            }
+            break;
+
             case GameState.Setup:
             {
                 AgentManager.Get().ClearAllAgents();
@@ -108,7 +124,6 @@ public class GameManager : MonoBehaviour
                 playerObjectives[1] = -1;
 
                 setupScreenController.gameObject.SetActive(true);
-                dropZonesContainer.SetActive(false);
             }
             break;
 
@@ -131,6 +146,7 @@ public class GameManager : MonoBehaviour
 
             case GameState.GameOver:
             {
+                dropZonesContainer.SetActive(true);
                 gameOverScreenController.gameObject.SetActive(true);
                 foreach (var agent in agentManager.agents)
                 {
@@ -147,9 +163,11 @@ public class GameManager : MonoBehaviour
     {
         playerObjectives = new int[2];
         
+        menuController.gameObject.SetActive(false);
         setupScreenController.gameObject.SetActive(false);
         gameOverScreenController.gameObject.SetActive(false);
         vignetteController.gameObject.SetActive(false);
+        dropZonesContainer.SetActive(false);
 
         AgentManager.Get().OnAgentKilled += onAgentKilled;
 
@@ -161,7 +179,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            setGameState(GameState.Setup);
+            setGameState(GameState.Menu);
         }
     }
 
