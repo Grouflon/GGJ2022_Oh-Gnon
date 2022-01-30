@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
+
 using TMPro;
 
 public class SetupScreenController : MonoBehaviour
@@ -15,31 +17,52 @@ public class SetupScreenController : MonoBehaviour
     public TMP_InputField seedField;
     public Button startButton;
     public TMP_Text messageText;
+    public Button creditsButton;
+    public Button closeCreditsButton;
+    public GameObject credits;
 
     // Start is called before the first frame update
     void Start()
     {
         p1Button.onClick.AddListener(
-        () => {
-            GameManager.Get().localPlayer = 0;
-            updateUI();
-        });
+            () =>
+            {
+                GameManager.Get().localPlayer = 0;
+                updateUI();
+            });
 
         p2Button.onClick.AddListener(
-        () => {
-            GameManager.Get().localPlayer = 1;
-            updateUI();
-        });
+            () =>
+            {
+                GameManager.Get().localPlayer = 1;
+                updateUI();
+            });
 
         seedField.onValueChanged.AddListener(
-        (string _text) => {
-            updateUI();
-        });
+            (string _text) =>
+            {
+                updateUI();
+            });
 
         startButton.onClick.AddListener(
-        () => {
-            GameManager.Get().setGameState(GameState.Game);
-        });
+            () =>
+            {
+                GameManager.Get().setGameState(GameState.Game);
+            });
+
+        creditsButton.onClick.AddListener(
+            () =>
+            {
+                credits.SetActive(true);
+            }
+        );
+
+        closeCreditsButton.onClick.AddListener(
+            () =>
+            {
+                credits.SetActive(false);
+            }
+        );
 
         updateUI();
     }
@@ -47,7 +70,7 @@ public class SetupScreenController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnEnable()
@@ -111,6 +134,7 @@ public class SetupScreenController : MonoBehaviour
 
         // Start Button
         startButton.interactable = (gm.localPlayer == 0 || gm.localPlayer == 1) && isSeedValid;
-    }
 
+        credits.SetActive(false);
+    }
 }
