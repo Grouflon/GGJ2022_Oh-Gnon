@@ -51,7 +51,7 @@ public class Agent : MonoBehaviour
     {
         if (DragManager.Get() == null)
             return; 
-            
+
         DragManager.Get().OnStartDragging -= OnAgentGrabbed;
     }
 
@@ -125,6 +125,18 @@ public class Agent : MonoBehaviour
                 Idle();
                 break;
         }
+
+        // Z ordering
+        Vector3 position = transform.position;
+        if (agentState != AgentState.DRAGGED)
+        {
+            position.z = position.y * 0.1f;
+        }
+        else
+        {
+            position.z = -5.0f;
+        }
+        transform.position = position;
     }
 
     private void OnAgentGrabbed(Agent p_agent)
