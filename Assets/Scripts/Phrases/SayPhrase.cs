@@ -28,7 +28,7 @@ public class SayPhrase : MonoBehaviour
 
         m_Agent = gameObject.GetComponent<Agent>();
 
-        //m_Agent.OnAgentStateChanged += WhenPickedUp;
+        m_Agent.OnAgentStateChanged += WhenPickedUp;
 
         Bubble.SetActive(false);
 
@@ -36,10 +36,6 @@ public class SayPhrase : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (!isShowingPhrase)
-        {
-        }
-
         //if (!isShowingName)
         //{
             TextOverHead_Name.enabled = true;
@@ -80,7 +76,6 @@ public class SayPhrase : MonoBehaviour
             {
                 charaPhrase.SayPhraseWhenPickedUp();
             }
-
         }
     }
 
@@ -97,7 +92,7 @@ public class SayPhrase : MonoBehaviour
 
             DelayBefore = Random.Range(0f, 0.5f);
             typeSpeed = 0.2f;
-            duration = 1.5f;
+            duration = 1f;
             StartCoroutine("ShowPhrase", PhraseToSay);
         }
     }
@@ -105,9 +100,13 @@ public class SayPhrase : MonoBehaviour
 
     public void SayPhraseWhenACharaDie(int IDwhoDied)
     {
-        if (!isShowingPhrase)
-        {
-            string PhraseToSay = "";
+        //if (!isShowingPhrase)
+        //{
+        StopCoroutine("ShowPhrase");
+
+        TextOverHead_Phrase.text = "";
+
+        string PhraseToSay = "";
 
             if (IDwhoDied == 20) //ID de QUICHE
             {
@@ -184,7 +183,7 @@ public class SayPhrase : MonoBehaviour
             typeSpeed = 0.5f;
             duration = 3f;
             StartCoroutine("ShowPhrase", PhraseToSay);
-        }
+        //}
     }
 
 

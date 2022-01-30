@@ -13,17 +13,8 @@ MonoBehaviour:
   m_Name: 06_TerryPoirechett
   m_EditorClassIdentifier: 
   Name: Terry Poirechett
-  skinProperty: base
-  Fruit: 1
-  Cloth: 2
-  Genital: 3
-  Expression: 5
-  Hat: 3
-  FacialHair: 3
-  Voice: 1
   Relations:
-  - validCheck: 0
-    RelationType: 4
+  - RelationType: 4
     ID_Targets: 0a000000
     Unique_Phrases:
-    - "La liqueur de cerise restera ma pr\xE9f\xE9r\xE9e. "
+    - "Repose en paix, La liqueur de cerise restera ma pr\xE9f\xE9r\xE9e. "

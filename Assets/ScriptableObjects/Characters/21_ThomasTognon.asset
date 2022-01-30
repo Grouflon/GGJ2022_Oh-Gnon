@@ -13,17 +13,8 @@ MonoBehaviour:
   m_Name: 21_ThomasTognon
   m_EditorClassIdentifier: 
   Name: Thomas Tognon
-  skinProperty: base
-  Fruit: 2
-  Cloth: 2
-  Genital: 3
-  Expression: 5
-  Hat: 3
-  FacialHair: 1
-  Voice: 1
   Relations:
-  - validCheck: 0
-    RelationType: 3
+  - RelationType: 3
     ID_Targets: 13000000
     Unique_Phrases:
     - Nooon ! Pas Thomas Farcie ! J'ai jamais pu lui avouer mon amour

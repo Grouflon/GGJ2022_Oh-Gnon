@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1460102523067099903, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 5.582386
       objectReference: {fileID: 0}
     - target: {fileID: 1460102523067099903, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.8163245
       objectReference: {fileID: 0}
     - target: {fileID: 1460102523067099903, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Eyes
-      value: Chocked_Eyes
+      value: Tired_Eyes
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Hair

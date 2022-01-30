@@ -29,19 +29,20 @@ MonoBehaviour:
   - Aled!
   - Sauce qui peut!!!
   PhraseJumeaux:
-  - Aaaaaah
+  - 'Aaaaaah '
   - Nooon, ma vie n'a plus aucun sens sans mon jumeaux
   - J'ai perdu ma pouaire...
+  - J'ai plus la banane
   PhraseDualipoire:
   - "De toute fa\xE7on j'aimais pas sa musique"
   - DUAAAAAAAAAA !
   - A jamais dans nos coeurs, ma star, ma vie.
   - Nooon, que vais-je faire sans Dua Lipoire ?
   PhrasePote:
-  - RIP.
+  - 'RIP. in pepperoni '
   - Tu vas nous manquer frero.
   - Bro !
-  - Mange tes morts.
+  - Mange tes morts mon pote.
   - Une salade de fruit !
   PhraseQuiche:
   - Ah le batard, il me devait 10 balles.
@@ -50,3 +51,4 @@ MonoBehaviour:
   - On est mieux sans QUICHE hein ?
   - Mieux vaut lui que moi.
   - Une QUICHE en moins !
+  - QUICHE est mort? ok.
