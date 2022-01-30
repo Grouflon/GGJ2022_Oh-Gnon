@@ -11,7 +11,6 @@ public enum AgentState
     IDLE,
     WALK,
     DRAGGED,
-    FEAR,
     DEAD
 }
 
@@ -26,7 +25,6 @@ public class Agent : MonoBehaviour
     float agentSpeed;
     float idleCurrentTimer;
     float idleTime;
-    Vector3 fearSource;
 
     public delegate void AgentDelegate(Agent _agent);
     public event AgentDelegate OnAgentKilled;
@@ -41,6 +39,8 @@ public class Agent : MonoBehaviour
         agentRigidbody = GetComponent<Rigidbody>();
         agentSpeed = AgentManager.Get().AgentParameters.Speed;
 
+        DragManager.Get().OnStartDragging += OnAgentGrabbed;
+
         audioSource = GetComponent<AudioSource>();
         skeletonAnimation = GetComponentInChildren<SkeletonAnimation>(true);
 
@@ -51,6 +51,8 @@ public class Agent : MonoBehaviour
     {
         if (DragManager.Get() == null)
             return; 
+
+        DragManager.Get().OnStartDragging -= OnAgentGrabbed;
     }
 
     public AgentState GetState()
@@ -67,7 +69,8 @@ public class Agent : MonoBehaviour
 
     public void SetState(AgentState state)
     {
-        if (agentState == state)
+
+       if (agentState == state)
             return;
 
         if (OnAgentStateChanged != null) OnAgentStateChanged(this, agentState, state);
@@ -76,25 +79,14 @@ public class Agent : MonoBehaviour
 
         if (agentState == AgentState.WALK)
         {
+            //destination = AgentManager.Get().GetRandomPointInGameArea();
             destination = transform.position + (Vector3) Random.insideUnitCircle * AgentManager.Get().GetRandomWalkDistance();
             destination = AgentManager.Get().ClampPointInGameArea(destination);
             skeletonAnimation.AnimationName = "Walk";
         }
 
-        if (agentState == AgentState.FEAR)
-        {
-            Vector3 fearSourceToAgent = transform.position - fearSource;
-            fearSourceToAgent.z = 0f;
-            float distanceToFearSource = fearSourceToAgent.magnitude;
-            float fearedDistance = Mathf.Max(Random.Range(3f, 5f), distanceToFearSource);
-            destination = fearSource + fearSourceToAgent.normalized * fearedDistance;
-            destination = AgentManager.Get().ClampPointInGameArea(destination);
-            skeletonAnimation.AnimationName = "Panic";
-        }
-
         if (agentState == AgentState.IDLE)
         {
-            
             idleCurrentTimer = 0f;
             idleTime = AgentManager.Get().GetRandomIdleTime();
             skeletonAnimation.AnimationName = "Idle";
@@ -103,14 +95,6 @@ public class Agent : MonoBehaviour
         if (agentState == AgentState.DRAGGED)
         {
             skeletonAnimation.AnimationName = "Panic";
-
-            foreach (Agent otherAgent in AgentManager.Get().agents)
-            {
-                if (otherAgent == this)
-                    continue;
-
-                otherAgent.OnOtherAgentGrabbed(this);
-            }
         }
     }
 
@@ -123,19 +107,14 @@ public class Agent : MonoBehaviour
         }
     }
 
-    void Walk(float _speed)
+    void Walk()
     {
-        Vector3 move = (destination - transform.position).normalized * _speed;
+        Vector3 move = (destination - transform.position).normalized * agentSpeed;
         transform.position = transform.position + move;
-        if (Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(destination.x, destination.y)) < 0.1f)
+        if (Vector3.Distance(transform.position, destination) < 0.1f)
         {
             SetState(AgentState.IDLE);
         }
-    }
-
-    void Fear()
-    {
-        Walk(agentSpeed * 1.5f);
     }
 
     void Update()
@@ -143,15 +122,11 @@ public class Agent : MonoBehaviour
         switch (agentState)
         {
             case (AgentState.WALK):
-                Walk(agentSpeed);
+                Walk();
                 break;
 
             case (AgentState.IDLE):
                 Idle();
-                break;
-
-            case (AgentState.FEAR):
-                Fear();
                 break;
         }
 
@@ -168,15 +143,8 @@ public class Agent : MonoBehaviour
         transform.position = position;
     }
 
-    private void OnOtherAgentGrabbed(Agent p_agent)
+    private void OnAgentGrabbed(Agent p_agent)
     {
-        fearSource = p_agent.transform.position;
-        SetState(AgentState.FEAR);
-    }
-
-    public void OnGrabbed()
-    {
-        Debug.Log($"Agent got grabbed ({gameObject.name})");
-        SetState(AgentState.DRAGGED);
+        Debug.Log($"Agent got grabbed ({p_agent.gameObject.name})");
     }
 }
