@@ -15,7 +15,10 @@ public class SayPhrase : MonoBehaviour
     public PhraseArrays m_PhraseArrays;
     private bool isShowingPhrase = false;
     private bool isShowingName = false;
+
     private float DelayBefore = 0;
+    private float typeSpeed = 0.5f;
+    private float duration = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,8 @@ public class SayPhrase : MonoBehaviour
         TextOverHead_Name.text = "";
 
         m_Agent = gameObject.GetComponent<Agent>();
+
+        m_Agent.OnAgentStateChanged += SayPhraseWhenPickedUp;
 
         Bubble.SetActive(false);
 
@@ -57,27 +62,30 @@ public class SayPhrase : MonoBehaviour
 
             if (Random.Range(0, 100) <= 50)
                 PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseBonjour);
-            else
-                PhraseToSay = "";
 
-            DelayBefore = Random.Range((float)1, (float)3);
+            DelayBefore = Random.Range(0.5f, 3.0f);
+            typeSpeed = 0.2f;
+            duration = 1.5f;
             StartCoroutine("ShowPhrase", PhraseToSay);
         }
     }
 
-    public void SayPhraseWhenPickedUp()
+    public void SayPhraseWhenPickedUp(Agent _agent, AgentState _state)
     {
-        if (!isShowingPhrase)
+        if(_state == AgentState.DRAGGED)
         {
-            string PhraseToSay = "";
+            if (!isShowingPhrase)
+            {
+                string PhraseToSay = "";
 
-            if (Random.Range(0, 100) <= 20)
-                PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhrasePanic);
-            else
-                PhraseToSay = "";
+                if (Random.Range(0, 100) <= 20)
+                    PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhrasePanic);
 
-
-            StartCoroutine("ShowPhrase", PhraseToSay);
+                DelayBefore = 0;
+                typeSpeed = 0.2f;
+                duration = 1.5f;
+                StartCoroutine("ShowPhrase", PhraseToSay);
+            }
         }
     }
 
@@ -143,6 +151,9 @@ public class SayPhrase : MonoBehaviour
                 }
             }
 
+            DelayBefore = 0;
+            typeSpeed = 0.5f;
+            duration = 3f;
             StartCoroutine("ShowPhrase", PhraseToSay);
         }
     }
@@ -188,8 +199,6 @@ public class SayPhrase : MonoBehaviour
 
     IEnumerator ShowPhrase(string text)
     {
-        float typeSpeed = 1;
-        float duration = 3;
         char[] Text_Array = text.ToCharArray();
         string TempString = "";
 
