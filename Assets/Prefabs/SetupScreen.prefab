@@ -193,8 +193,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 451.00003, y: -307.435}
-  m_SizeDelta: {x: 902.00006, y: 61.4}
+  m_AnchoredPosition: {x: 320, y: -293.685}
+  m_SizeDelta: {x: 640, y: 61.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2132395874745678916
 MonoBehaviour:
@@ -280,8 +280,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 225.50002, y: -45.309998}
-  m_SizeDelta: {x: 400, y: 90.619995}
+  m_AnchoredPosition: {x: 200, y: -43.845}
+  m_SizeDelta: {x: 400, y: 87.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2132395874773339191
 CanvasRenderer:
@@ -544,8 +544,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 451.00003, y: -181.485}
-  m_SizeDelta: {x: 902.00006, y: 150.5}
+  m_AnchoredPosition: {x: 320, y: -167.735}
+  m_SizeDelta: {x: 800, y: 150.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2132395875095869338
 MonoBehaviour:
@@ -717,8 +717,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 451.00003, y: 0}
-  m_SizeDelta: {x: 902.00006, y: 49.88}
+  m_AnchoredPosition: {x: 400, y: 0}
+  m_SizeDelta: {x: 800, y: 52.81}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2132395875245275392
 CanvasRenderer:
@@ -748,10 +748,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Select your player
-
-    One player must be player 1, the other must be
-    player 2'
+  m_text: "Choisissez un r\xF4le\nUn participant doit \xEAtre Joueureuse 1, l'autre
+    Joueureuse 2"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac131a44b05acb141b26aaa4ce488a7d, type: 2}
   m_sharedMaterial: {fileID: 6435500450699976159, guid: ac131a44b05acb141b26aaa4ce488a7d, type: 2}
@@ -906,7 +904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Player 2
+  m_text: 'Joueur.euse 2
 
 '
   m_isRightToLeft: 0
@@ -1044,7 +1042,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter text...
+  m_text: Entrez un nombre...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1305,8 +1303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 451.00003, y: -59.88}
-  m_SizeDelta: {x: 902.00006, y: 90.619995}
+  m_AnchoredPosition: {x: 400, y: -62.81}
+  m_SizeDelta: {x: 800, y: 87.69}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2132395875988918169
 MonoBehaviour:
@@ -1420,7 +1418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Player 1
+  m_text: 'Joueur.euse 1
 
 '
   m_isRightToLeft: 0
@@ -1529,8 +1527,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 676.50006, y: -45.309998}
-  m_SizeDelta: {x: 400, y: 90.619995}
+  m_AnchoredPosition: {x: 600, y: -43.845}
+  m_SizeDelta: {x: 400, y: 87.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2132395876239430661
 CanvasRenderer:
@@ -1669,7 +1667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 451.00003, y: 0}
+  m_AnchoredPosition: {x: 320, y: 0}
   m_SizeDelta: {x: 564.59, y: 24.58}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2132395876348790050
@@ -1700,10 +1698,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter the same number of your choice on both computers
+  m_text: "Entrez le m\xEAme nombre de votre choix sur les deux appareils"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ac131a44b05acb141b26aaa4ce488a7d, type: 2}
+  m_sharedMaterial: {fileID: 6435500450699976159, guid: ac131a44b05acb141b26aaa4ce488a7d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1803,8 +1801,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 451.00003, y: -379.69998}
-  m_SizeDelta: {x: 902.00006, y: 43.13}
+  m_AnchoredPosition: {x: 320, y: -365.94998}
+  m_SizeDelta: {x: 640, y: 43.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2132395876493343061
 GameObject:
@@ -1872,7 +1870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Start Game
+  m_text: 'Commencer
 
 '
   m_isRightToLeft: 0
@@ -1981,8 +1979,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 451.00003, y: -45.505}
-  m_SizeDelta: {x: 318.7, y: 28.65}
+  m_AnchoredPosition: {x: 320, y: -46.085}
+  m_SizeDelta: {x: 318.7, y: 29.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2132395876680709507
 CanvasRenderer:
