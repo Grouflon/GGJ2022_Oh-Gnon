@@ -30,12 +30,18 @@ public class DropZone : MonoBehaviour
 
     public void Unselect()
     {
-        skeletonAnimation.AnimationName = m_idleAnimation;
+        if (skeletonAnimation.AnimationName != m_idleAnimation)
+        {
+            skeletonAnimation.AnimationName = m_idleAnimation;
+        }
     }
 
     public void Select()
     {
-        skeletonAnimation.AnimationName = m_inUseAnimation;
+        if (skeletonAnimation.AnimationName != m_inUseAnimation)
+        {
+            skeletonAnimation.AnimationName = m_inUseAnimation;
+        }
     }
 
     public void Use()

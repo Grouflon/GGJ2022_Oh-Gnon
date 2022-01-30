@@ -79,12 +79,12 @@ public class Agent : MonoBehaviour
         {
             case EFatality.MOUTH:
                 skeletonAnimation.AnimationName = "Disappear";
-                yield return new WaitForSeconds(0.333f);
+                yield return new WaitForSeconds(0.3f);
                 break;
 
             case EFatality.PENTACLE:
                 skeletonAnimation.AnimationName = "Explosion";
-                yield return new WaitForSeconds(0.933f);
+                yield return new WaitForSeconds(0.167f);
                 if (deathFX != null)
                     Instantiate(deathFX, transform.position, transform.rotation);
                 break;
