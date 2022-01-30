@@ -1,404 +1,411 @@
 
 OhGnon_Chara_Tomate-TestAnim.png
-size: 1042,1042
+size: 1073,1073
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Beard
   rotate: false
-  xy: 426, 494
+  xy: 429, 525
   size: 374, 272
   orig: 374, 272
   offset: 0, 0
   index: -1
 Bouche Smirk
   rotate: true
-  xy: 376, 634
+  xy: 376, 333
   size: 64, 44
   orig: 64, 44
   offset: 0, 0
   index: -1
 Buste Et Bras
-  rotate: false
-  xy: 250, 289
+  rotate: true
+  xy: 637, 73
   size: 224, 121
   orig: 224, 121
   offset: 0, 0
   index: -1
 Cap
   rotate: true
-  xy: 201, 10
+  xy: 201, 41
   size: 276, 223
   orig: 276, 223
   offset: 0, 0
   index: -1
+Crown
+  rotate: true
+  xy: 250, 849
+  size: 222, 163
+  orig: 222, 163
+  offset: 0, 0
+  index: -1
 Docker
   rotate: false
-  xy: 801, 231
+  xy: 425, 344
   size: 223, 179
   orig: 223, 179
   offset: 0, 0
   index: -1
 Eye Half Left
   rotate: false
-  xy: 655, 412
+  xy: 388, 771
   size: 29, 26
   orig: 29, 26
   offset: 0, 0
   index: -1
 Eye Half Right
   rotate: false
-  xy: 623, 412
+  xy: 1031, 808
   size: 30, 26
   orig: 30, 26
   offset: 0, 0
   index: -1
 Eye Shocked Left
-  rotate: true
-  xy: 376, 700
+  rotate: false
+  xy: 1031, 997
   size: 38, 46
   orig: 38, 46
   offset: 0, 0
   index: -1
 Eye Shocked Right
-  rotate: true
-  xy: 376, 786
+  rotate: false
+  xy: 388, 799
   size: 38, 48
   orig: 38, 48
   offset: 0, 0
   index: -1
 Eye Tired Left
-  rotate: true
-  xy: 388, 968
+  rotate: false
+  xy: 321, 3
   size: 29, 36
   orig: 29, 36
   offset: 0, 0
   index: -1
 Eye Tired Right
-  rotate: true
-  xy: 388, 999
+  rotate: false
+  xy: 278, 3
   size: 41, 36
   orig: 41, 36
   offset: 0, 0
   index: -1
 Eyebrow Angry Left
-  rotate: true
-  xy: 320, 500
+  rotate: false
+  xy: 153, 2
   size: 18, 34
   orig: 18, 34
   offset: 0, 0
   index: -1
 Eyebrow Angry Right
   rotate: false
-  xy: 250, 494
+  xy: 1031, 782
   size: 28, 24
   orig: 28, 24
   offset: 0, 0
   index: -1
 Eyebrow Frida Left
   rotate: true
-  xy: 492, 4
+  xy: 1031, 914
   size: 57, 31
   orig: 57, 31
   offset: 0, 0
   index: -1
 Eyebrow Frida Right
-  rotate: true
-  xy: 525, 10
+  rotate: false
+  xy: 376, 720
   size: 51, 49
   orig: 51, 49
   offset: 0, 0
   index: -1
 Eyebrow Sad Left
   rotate: false
-  xy: 280, 496
+  xy: 1031, 973
   size: 38, 22
   orig: 38, 22
   offset: 0, 0
   index: -1
 Eyebrow Sad Right
-  rotate: true
-  xy: 376, 613
+  rotate: false
+  xy: 1031, 736
   size: 19, 44
   orig: 19, 44
   offset: 0, 0
   index: -1
 Fedora
-  rotate: false
-  xy: 576, 6
+  rotate: true
+  xy: 429, 16
   size: 326, 206
   orig: 326, 206
   offset: 0, 0
   index: -1
 Feuille Droite
-  rotate: true
-  xy: 376, 523
+  rotate: false
+  xy: 851, 299
   size: 88, 43
   orig: 88, 43
   offset: 0, 0
   index: -1
 Feuille Gauche
-  rotate: true
-  xy: 363, 412
+  rotate: false
+  xy: 2, 2
   size: 80, 34
   orig: 80, 34
   offset: 0, 0
   index: -1
 Feuille Milieu Droite
   rotate: false
-  xy: 623, 440
+  xy: 780, 19
   size: 73, 52
   orig: 73, 52
   offset: 0, 0
   index: -1
 Feuille Milieu Gauche
-  rotate: true
-  xy: 426, 2
+  rotate: false
+  xy: 637, 7
   size: 59, 64
   orig: 59, 64
   offset: 0, 0
   index: -1
 Head
   rotate: false
-  xy: 2, 665
+  xy: 2, 696
   size: 246, 375
   orig: 246, 375
   offset: 0, 0
   index: -1
 Jambes
-  rotate: false
-  xy: 501, 419
+  rotate: true
+  xy: 776, 321
   size: 120, 73
   orig: 120, 73
   offset: 0, 0
   index: -1
 Leaf
   rotate: false
-  xy: 250, 972
+  xy: 250, 779
   size: 136, 68
   orig: 136, 68
   offset: 0, 0
   index: -1
 Melon
   rotate: true
-  xy: 2, 7
+  xy: 2, 38
   size: 279, 197
   orig: 279, 197
   offset: 0, 0
   index: -1
 Mouth Awkward
-  rotate: true
-  xy: 250, 412
+  rotate: false
+  xy: 698, 8
   size: 80, 63
   orig: 80, 63
   offset: 0, 0
   index: -1
 Mouth Dumb
   rotate: true
-  xy: 315, 412
+  xy: 376, 399
   size: 80, 46
   orig: 80, 46
   offset: 0, 0
   index: -1
 Mouth Happy
   rotate: true
-  xy: 376, 919
+  xy: 376, 620
   size: 47, 48
   orig: 47, 48
   offset: 0, 0
   index: -1
 Mouth Sad
-  rotate: false
-  xy: 698, 229
+  rotate: true
+  xy: 376, 669
   size: 49, 50
   orig: 49, 50
   offset: 0, 0
   index: -1
 Mouth Shocked
   rotate: true
-  xy: 376, 826
+  xy: 376, 527
   size: 42, 48
   orig: 42, 48
   offset: 0, 0
   index: -1
 Mustache 1
-  rotate: true
-  xy: 702, 281
+  rotate: false
+  xy: 851, 344
   size: 211, 97
   orig: 211, 97
   offset: 0, 0
   index: -1
 Mustache 2
-  rotate: false
-  xy: 399, 413
+  rotate: true
+  xy: 883, 17
   size: 100, 79
   orig: 100, 79
   offset: 0, 0
   index: -1
 Oeil Droit
   rotate: false
-  xy: 1007, 11
+  xy: 1031, 836
   size: 31, 31
   orig: 31, 31
   offset: 0, 0
   index: -1
 Oeil Gauche
   rotate: true
-  xy: 975, 10
+  xy: 397, 7
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
   index: -1
 Pear Legs
   rotate: false
-  xy: 904, 156
+  xy: 883, 194
   size: 120, 73
   orig: 120, 73
   offset: 0, 0
   index: -1
 Pear Penis
   rotate: false
-  xy: 376, 740
+  xy: 376, 481
   size: 47, 44
   orig: 47, 44
   offset: 0, 0
   index: -1
 Pear Shirt 1
   rotate: false
-  xy: 802, 916
+  xy: 805, 947
   size: 224, 124
   orig: 224, 124
   offset: 0, 0
   index: -1
 Pear Shirt 2
   rotate: false
-  xy: 802, 790
+  xy: 805, 821
   size: 224, 124
   orig: 224, 124
   offset: 0, 0
   index: -1
 Pear Shirt 3
   rotate: false
-  xy: 802, 664
+  xy: 805, 695
   size: 224, 124
   orig: 224, 124
   offset: 0, 0
   index: -1
 Pear Shirt 4
-  rotate: false
-  xy: 802, 538
+  rotate: true
+  xy: 250, 553
   size: 224, 124
   orig: 224, 124
   offset: 0, 0
   index: -1
 Pear Vulva
-  rotate: false
-  xy: 749, 214
+  rotate: true
+  xy: 1031, 869
   size: 43, 31
   orig: 43, 31
   offset: 0, 0
   index: -1
 PearBeard
   rotate: false
-  xy: 2, 288
+  xy: 2, 319
   size: 246, 375
   orig: 246, 375
   offset: 0, 0
   index: -1
 Pear_Chest
-  rotate: false
-  xy: 476, 289
+  rotate: true
+  xy: 760, 73
   size: 224, 121
   orig: 224, 121
   offset: 0, 0
   index: -1
 Pear_Legs
   rotate: false
-  xy: 576, 214
+  xy: 941, 269
   size: 120, 73
   orig: 120, 73
   offset: 0, 0
   index: -1
 Sourcil Droit
   rotate: false
-  xy: 376, 495
+  xy: 1031, 1045
   size: 40, 26
   orig: 40, 26
   offset: 0, 0
   index: -1
 Sourcil Gauche
-  rotate: true
-  xy: 975, 44
+  rotate: false
+  xy: 241, 2
   size: 35, 37
   orig: 35, 37
   offset: 0, 0
   index: -1
 Stem
-  rotate: false
-  xy: 904, 12
+  rotate: true
+  xy: 84, 2
   size: 34, 67
   orig: 34, 67
   offset: 0, 0
   index: -1
 Tete
   rotate: false
-  xy: 426, 768
+  xy: 429, 799
   size: 374, 272
   orig: 374, 272
   offset: 0, 0
   index: -1
 Tige
-  rotate: false
-  xy: 940, 13
+  rotate: true
+  xy: 173, 3
   size: 33, 66
   orig: 33, 66
   offset: 0, 0
   index: -1
 Tomato Legs
   rotate: false
-  xy: 904, 81
+  xy: 883, 119
   size: 120, 73
   orig: 120, 73
   offset: 0, 0
   index: -1
 Tomato Penis
   rotate: true
-  xy: 376, 870
+  xy: 376, 571
   size: 47, 48
   orig: 47, 48
   offset: 0, 0
   index: -1
 Tomato Shirt 10
-  rotate: true
-  xy: 250, 520
+  rotate: false
+  xy: 805, 443
   size: 224, 124
   orig: 224, 124
   offset: 0, 0
   index: -1
 Tomato Shirt 11
-  rotate: true
-  xy: 250, 746
+  rotate: false
+  xy: 805, 569
   size: 224, 124
   orig: 224, 124
   offset: 0, 0
   index: -1
 Tomato Shirt 4
-  rotate: false
-  xy: 802, 412
+  rotate: true
+  xy: 250, 327
   size: 224, 124
   orig: 224, 124
   offset: 0, 0
   index: -1
 Tomato Shirt 7
   rotate: true
-  xy: 426, 63
+  xy: 650, 299
   size: 224, 124
   orig: 224, 124
   offset: 0, 0
   index: -1
 Tomato Vulva
   rotate: false
-  xy: 749, 247
+  xy: 352, 7
   size: 43, 32
   orig: 43, 32
   offset: 0, 0
