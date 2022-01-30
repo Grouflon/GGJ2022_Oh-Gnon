@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fc6dff54136374b8b419af6eecd84b, type: 3}
   m_Name: 05_EdouardLaPoire
   m_EditorClassIdentifier: 
-  Name: Edouard la Poire
+  Name: Edouard de la Poire
   Relations:
   - RelationType: 6
     ID_Targets: 0d000000

@@ -13,24 +13,9 @@ MonoBehaviour:
   m_Name: 03_Poirrine
   m_EditorClassIdentifier: 
   Name: Poirrine
-  skinProperty: base
-  Eyebrows: Neutral_Eyebrow
-  Chest: Pear/Chest_Pear
-  Eyes: Neutral_Eyes
-  Mouth: Mouth_Dumb
-  Hair: Pear_Hairs
-  Head: Pear_Head
-  Pants: Pear/Pear_Neutral_Pants
-  Genitals: Pear_Vulve
-  Fruit: 1
-  Cloth: 1
-  Genital: 2
-  Expression: 1
-  Hat: 3
-  FacialHair: 2
-  Voice: 2
   Relations:
-  - validCheck: 0
-    RelationType: 0
+  - RelationType: 0
     ID_Targets: 01000000
-    Unique_Phrases: []
+    Unique_Phrases:
+    - Noon Poirotte...
+    - Plus jamais tu me fera poirotter...

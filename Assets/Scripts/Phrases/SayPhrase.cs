@@ -36,16 +36,12 @@ public class SayPhrase : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        //if (!isShowingName)
-        //{
-            TextOverHead_Name.enabled = true;
-            TextOverHead_Name.text = m_Agent.infos.Name;
-        //}
+        TextOverHead_Name.enabled = true;
+        TextOverHead_Name.text = m_Agent.infos.Name;
     }
 
     private void OnMouseExit()
     {
-
         TextOverHead_Name.enabled = false;
         TextOverHead_Name.text = "";
     }
@@ -162,7 +158,17 @@ public class SayPhrase : MonoBehaviour
                             PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseDualipoire);
                             break;
                         case E_relationType.Jumeaux:
-                            PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseJumeaux);
+                            if(currentRelation.Unique_Phrases.Length > 0)
+                            {
+                                if(Random.Range(0, 100) <= 60)
+                                    PhraseToSay = SelectRandomPhraseInArray(currentRelation.Unique_Phrases);
+                                else
+                                    PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseJumeaux);
+                            }
+                            else
+                            {
+                                PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseJumeaux);
+                            }
                             break;
                         case E_relationType.Obeis:
                             if(IDwhoDied == 16)
