@@ -28,6 +28,9 @@ public class DragManager : MonoBehaviour
             return;
 
         m_currentDraggable = p_draggable;
+
+        m_currentDraggable.GetComponent<Agent>().OnGrabbed();
+
         OnStartDragging?.Invoke(m_currentDraggable.GetComponent<Agent>());
     }
 

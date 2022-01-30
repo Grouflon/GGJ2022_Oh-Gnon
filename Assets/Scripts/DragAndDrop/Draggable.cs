@@ -22,8 +22,6 @@ public class Draggable : MonoBehaviour
     {
         transform.position = GetMousePosition() + m_dragOffset;
         DragManager.Get().OnStartDrag(this);
-
-        m_agent.SetState(AgentState.DRAGGED);
     }
 
     private void OnMouseUp()
