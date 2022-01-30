@@ -37,13 +37,14 @@ public class DragManager : MonoBehaviour
         if (p_draggable == null)
             return;
 
-        if (p_draggable != m_currentDraggable ||
-            m_currentDropZone == null)
-            return;
+        // Dropped in zone, kill kill kill
+        if (p_draggable == m_currentDraggable &&
+            m_currentDropZone != null)
+        {
+            m_currentDropZone.Use();
+            m_currentDraggable.GetComponent<Agent>().Kill();
+        }
 
-        m_currentDropZone.Use();
-
-        m_currentDraggable.GetComponent<Agent>().Kill();
         m_currentDraggable = null;
     }
 
