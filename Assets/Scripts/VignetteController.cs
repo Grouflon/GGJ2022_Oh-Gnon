@@ -17,6 +17,8 @@ public class VignetteController : MonoBehaviour
     void OnEnable()
     {
         GameManager gm = GameManager.Get();
+        if (gm.getGameState() != GameState.Game)
+            return;
 
         Agent agentPrefab = gm.charactersPrefabs[gm.playerObjectives[gm.otherPlayer]];
         

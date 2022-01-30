@@ -18,7 +18,6 @@ public class DragManager : MonoBehaviour
         {
             m_instance = FindObjectOfType<DragManager>();
         }
-        Assert.IsNotNull(m_instance);
         return m_instance;
     }
     static DragManager m_instance;

@@ -41,6 +41,9 @@ public class AgentSkin : MonoBehaviour
         if (_skinName.Length == 0)
             return;
 
+        if (_skinName[_skinName.Length - 1] == '/')
+            return;
+
         Skin skin = _skeletonAnimation.Skeleton.Data.FindSkin(_skinName);
         if (skin != null)
         {
@@ -48,7 +51,7 @@ public class AgentSkin : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Unknown skin " + _skinName);
+            Debug.LogError("Unknown skin " + _skinName + " in " + _skeletonAnimation.transform.parent.gameObject.name);
         }
     }
 

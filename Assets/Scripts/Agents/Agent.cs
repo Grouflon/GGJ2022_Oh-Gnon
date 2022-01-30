@@ -49,6 +49,9 @@ public class Agent : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (DragManager.Get() == null)
+            return; 
+            
         DragManager.Get().OnStartDragging -= OnAgentGrabbed;
     }
 

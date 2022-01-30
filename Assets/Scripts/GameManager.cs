@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public GameState getGameState() { return m_gameState; }
+
     public void setGameState(GameState _state)
     {
         if (m_gameState == _state)
