@@ -18,6 +18,12 @@ public class SoundManager : MonoBehaviour
     public AudioClip VictoryClip;
     public AudioClip DefeatClip;
 
+    AudioSource generalSource;
+
+    private void Awake()
+    {
+        generalSource = GetComponent<AudioSource>();
+    }
 
     public static SoundManager Get()
     {
@@ -30,7 +36,7 @@ public class SoundManager : MonoBehaviour
     }
     static SoundManager m_instance;
 
-    public void PlayRandomSound(SoundType type, AudioSource source)
+    public void PlayRandomSound(SoundType type, AudioSource source = null)
     {
         List<AudioClip> currentList = new List<AudioClip>();
 
@@ -45,14 +51,27 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case (SoundType.DEATH):
-                currentList.AddRange(AudioFearList);
+                currentList.AddRange(AudioDeathList);
                 break;
         }
 
         if(currentList.Count > 0)
         {
-            source.clip = currentList[Random.Range(0,currentList.Count)];
-            source.Play();
+            if (source)
+            {
+                source.clip = currentList[Random.Range(0, currentList.Count)];
+                source.Play();
+            }
+            else
+            {
+                generalSource.clip = currentList[Random.Range(0, currentList.Count)];
+                generalSource.Play();
+            }
         }
+    }
+
+    public void StopGeneralAudioSource()
+    {
+        generalSource.Stop();
     }
 }
