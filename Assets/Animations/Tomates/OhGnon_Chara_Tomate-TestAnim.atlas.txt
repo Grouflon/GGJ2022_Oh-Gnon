@@ -13,7 +13,7 @@ Beard
   index: -1
 Bouche Smirk
   rotate: true
-  xy: 376, 683
+  xy: 376, 634
   size: 64, 44
   orig: 64, 44
   offset: 0, 0
@@ -55,14 +55,14 @@ Eye Half Right
   index: -1
 Eye Shocked Left
   rotate: true
-  xy: 376, 749
+  xy: 376, 700
   size: 38, 46
   orig: 38, 46
   offset: 0, 0
   index: -1
 Eye Shocked Right
   rotate: true
-  xy: 376, 835
+  xy: 376, 786
   size: 38, 48
   orig: 38, 48
   offset: 0, 0
@@ -82,8 +82,8 @@ Eye Tired Right
   offset: 0, 0
   index: -1
 Eyebrow Angry Left
-  rotate: false
-  xy: 404, 502
+  rotate: true
+  xy: 320, 500
   size: 18, 34
   orig: 18, 34
   offset: 0, 0
@@ -118,7 +118,7 @@ Eyebrow Sad Left
   index: -1
 Eyebrow Sad Right
   rotate: true
-  xy: 376, 662
+  xy: 376, 613
   size: 19, 44
   orig: 19, 44
   offset: 0, 0
@@ -132,7 +132,7 @@ Fedora
   index: -1
 Feuille Droite
   rotate: true
-  xy: 376, 572
+  xy: 376, 523
   size: 88, 43
   orig: 88, 43
   offset: 0, 0
@@ -200,6 +200,13 @@ Mouth Dumb
   orig: 80, 46
   offset: 0, 0
   index: -1
+Mouth Happy
+  rotate: true
+  xy: 376, 919
+  size: 47, 48
+  orig: 47, 48
+  offset: 0, 0
+  index: -1
 Mouth Sad
   rotate: false
   xy: 698, 229
@@ -209,7 +216,7 @@ Mouth Sad
   index: -1
 Mouth Shocked
   rotate: true
-  xy: 376, 875
+  xy: 376, 826
   size: 42, 48
   orig: 42, 48
   offset: 0, 0
@@ -230,14 +237,14 @@ Mustache 2
   index: -1
 Oeil Droit
   rotate: false
-  xy: 975, 11
+  xy: 1007, 11
   size: 31, 31
   orig: 31, 31
   offset: 0, 0
   index: -1
 Oeil Gauche
   rotate: true
-  xy: 749, 214
+  xy: 975, 10
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
@@ -251,7 +258,7 @@ Pear Legs
   index: -1
 Pear Penis
   rotate: false
-  xy: 376, 789
+  xy: 376, 740
   size: 47, 44
   orig: 47, 44
   offset: 0, 0
@@ -286,7 +293,7 @@ Pear Shirt 4
   index: -1
 Pear Vulva
   rotate: false
-  xy: 749, 248
+  xy: 749, 214
   size: 43, 31
   orig: 43, 31
   offset: 0, 0
@@ -313,8 +320,8 @@ Pear_Legs
   offset: 0, 0
   index: -1
 Sourcil Droit
-  rotate: true
-  xy: 376, 496
+  rotate: false
+  xy: 376, 495
   size: 40, 26
   orig: 40, 26
   offset: 0, 0
@@ -356,7 +363,7 @@ Tomato Legs
   index: -1
 Tomato Penis
   rotate: true
-  xy: 376, 919
+  xy: 376, 870
   size: 47, 48
   orig: 47, 48
   offset: 0, 0
@@ -391,7 +398,7 @@ Tomato Shirt 7
   index: -1
 Tomato Vulva
   rotate: false
-  xy: 376, 538
+  xy: 749, 247
   size: 43, 32
   orig: 43, 32
   offset: 0, 0
