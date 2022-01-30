@@ -7,6 +7,7 @@ public enum GameState
 {
     None,
     Menu,
+    Rules,
     Setup,
     Game,
     GameOver
@@ -43,7 +44,8 @@ public class GameManager : MonoBehaviour
     public bool quickStart = false;
 
     [Header("Internal")]
-    public MenuController menuController; 
+    public MenuController menuController;
+    public RulesController rulesController;
     public SetupScreenController setupScreenController; 
     public GameOverScreenController gameOverScreenController;
     public VignetteController vignetteController;
@@ -83,6 +85,12 @@ public class GameManager : MonoBehaviour
             }
             break;
 
+            case GameState.Rules:
+            {
+                rulesController.gameObject.SetActive(false);
+            }
+            break;
+
             case GameState.Setup:
             {
                 setupScreenController.gameObject.SetActive(false);
@@ -112,6 +120,12 @@ public class GameManager : MonoBehaviour
             case GameState.Menu:
             {
                 menuController.gameObject.SetActive(true);
+            }
+            break;
+
+            case GameState.Rules:
+            {
+                rulesController.gameObject.SetActive(true);
             }
             break;
 
@@ -164,6 +178,7 @@ public class GameManager : MonoBehaviour
         playerObjectives = new int[2];
         
         menuController.gameObject.SetActive(false);
+        rulesController.gameObject.SetActive(false);
         setupScreenController.gameObject.SetActive(false);
         gameOverScreenController.gameObject.SetActive(false);
         vignetteController.gameObject.SetActive(false);
