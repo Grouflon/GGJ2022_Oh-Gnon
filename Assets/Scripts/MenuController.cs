@@ -58,6 +58,8 @@ public class MenuController : MonoBehaviour
                 credits.SetActive(false);
             }
         );
+
+        credits.SetActive(false);
     }
 
     // Update is called once per frame
