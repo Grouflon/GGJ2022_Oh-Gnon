@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     }
 
     public List<Agent> charactersPrefabs;
+    public int[] playerObjectives;
 
     [Header("Debug")]
     public bool quickStart = false;
@@ -43,18 +44,19 @@ public class GameManager : MonoBehaviour
     [Header("Internal")]
     public SetupScreenController setupScreenController; 
     public GameOverScreenController gameOverScreenController;
+    public VignetteController vignetteController;
 
     public GameObject dropZonesContainer;
 
     public void onAgentKilled(Agent _agent)
     {
-        if (m_playerObjectives[m_localPlayer] == _agent.id)
+        if (playerObjectives[m_localPlayer] == _agent.id)
         {
             setGameState(GameState.GameOver);
         }
         else if (AgentManager.Get().agents.Count == 1)
         {
-            Assert.IsTrue(AgentManager.Get().agents[0].id == m_playerObjectives[m_localPlayer]);
+            Assert.IsTrue(AgentManager.Get().agents[0].id == playerObjectives[m_localPlayer]);
             m_isWinning = true;
             setGameState(GameState.GameOver);
         }
@@ -76,7 +78,7 @@ public class GameManager : MonoBehaviour
 
             case GameState.Game:
             {
-                
+                vignetteController.gameObject.SetActive(false);
             }
             break;
 
@@ -97,8 +99,8 @@ public class GameManager : MonoBehaviour
                 AgentManager.Get().ClearAllAgents();
                 m_localPlayer = -1;
                 m_seed = -1;
-                m_playerObjectives[0] = -1;
-                m_playerObjectives[1] = -1;
+                playerObjectives[0] = -1;
+                playerObjectives[1] = -1;
 
                 setupScreenController.gameObject.SetActive(true);
                 dropZonesContainer.SetActive(false);
@@ -110,14 +112,15 @@ public class GameManager : MonoBehaviour
                 m_isWinning = false;
 
                 Random.InitState(m_seed);
-                m_playerObjectives[0] = Random.Range(0, charactersPrefabs.Count);
-                m_playerObjectives[1] = Random.Range(0, charactersPrefabs.Count);
+                playerObjectives[0] = Random.Range(0, charactersPrefabs.Count);
+                playerObjectives[1] = Random.Range(0, charactersPrefabs.Count);
 
                 AgentManager.Get().SpawnAgents(charactersPrefabs);
-                Debug.Log(m_playerObjectives[0]);
-                Debug.Log(m_playerObjectives[1]);
+                Debug.Log(playerObjectives[0]);
+                Debug.Log(playerObjectives[1]);
 
                 dropZonesContainer.SetActive(true);
+                vignetteController.gameObject.SetActive(true);
             }
             break;
 
@@ -132,10 +135,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_playerObjectives = new int[2];
+        playerObjectives = new int[2];
         
         setupScreenController.gameObject.SetActive(false);
         gameOverScreenController.gameObject.SetActive(false);
+        vignetteController.gameObject.SetActive(false);
 
         AgentManager.Get().OnAgentKilled += onAgentKilled;
 
@@ -161,7 +165,6 @@ public class GameManager : MonoBehaviour
     
     int m_seed = -1;
     int m_localPlayer = -1;
-    int[] m_playerObjectives;
     bool m_isWinning = false;
 
     // Singleton

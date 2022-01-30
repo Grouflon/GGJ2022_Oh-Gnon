@@ -27,7 +27,7 @@ public class AgentSkin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateSkin();
+        UpdateSkin(skeletonAnimation);
     }
 
     // Update is called once per frame
@@ -52,24 +52,22 @@ public class AgentSkin : MonoBehaviour
         }
     }
 
-    public void UpdateSkin()
+    public void UpdateSkin(SkeletonAnimation _skeletonAnimaton)
     {
-        SkeletonAnimation mySkeletonAnimation = GetComponentInChildren<SkeletonAnimation>(true);
-
         Skin newSkin = new Skin("skin"); // 1. Create a new empty skin
-        AddSkin(mySkeletonAnimation, newSkin, "Eyebrows/" + Eyebrows);
-        AddSkin(mySkeletonAnimation, newSkin, "Chests/" + Chest);
-        AddSkin(mySkeletonAnimation, newSkin, "Eyes/" + Eyes);
-        AddSkin(mySkeletonAnimation, newSkin, "Mouths/" + Mouth);
-        AddSkin(mySkeletonAnimation, newSkin, "Hairs/" + Hairs);
-        AddSkin(mySkeletonAnimation, newSkin, "Head/" + Head);
-        AddSkin(mySkeletonAnimation, newSkin, "Pants/" + Pants);
-        AddSkin(mySkeletonAnimation, newSkin, "Genitals/" + Genitals);
-        AddSkin(mySkeletonAnimation, newSkin, "Hats/" + Hats);
-        AddSkin(mySkeletonAnimation, newSkin, "Mustaches/" + Mustaches);
+        AddSkin(_skeletonAnimaton, newSkin, "Eyebrows/" + Eyebrows);
+        AddSkin(_skeletonAnimaton, newSkin, "Chests/" + Chest);
+        AddSkin(_skeletonAnimaton, newSkin, "Eyes/" + Eyes);
+        AddSkin(_skeletonAnimaton, newSkin, "Mouths/" + Mouth);
+        AddSkin(_skeletonAnimaton, newSkin, "Hairs/" + Hairs);
+        AddSkin(_skeletonAnimaton, newSkin, "Head/" + Head);
+        AddSkin(_skeletonAnimaton, newSkin, "Pants/" + Pants);
+        AddSkin(_skeletonAnimaton, newSkin, "Genitals/" + Genitals);
+        AddSkin(_skeletonAnimaton, newSkin, "Hats/" + Hats);
+        AddSkin(_skeletonAnimaton, newSkin, "Mustaches/" + Mustaches);
 
-        mySkeletonAnimation.Skeleton.SetSkin(newSkin);
-        mySkeletonAnimation.Skeleton.SetSlotsToSetupPose();
+        _skeletonAnimaton.Skeleton.SetSkin(newSkin);
+        _skeletonAnimaton.Skeleton.SetSlotsToSetupPose();
     }
 
     SkeletonAnimation skeletonAnimation;
