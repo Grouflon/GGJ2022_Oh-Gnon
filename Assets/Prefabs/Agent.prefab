@@ -659,6 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextOverHead_Phrase: {fileID: 8525365678685034455}
   TextOverHead_Name: {fileID: 517316138871200620}
+  Bubble: {fileID: 8496783089481021986}
   m_PhraseArrays: {fileID: 11400000, guid: 46c9fb5dfec059647b980a4356f84783, type: 2}
 --- !u!114 &8328427272725001137
 MonoBehaviour:

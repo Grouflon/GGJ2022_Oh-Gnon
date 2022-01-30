@@ -98,7 +98,7 @@ PrefabInstance:
     - target: {fileID: 5697866203614312016, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: infos
       value: 
-      objectReference: {fileID: 11400000, guid: daab2835111110c44bc8aef8518a4f51, type: 2}
+      objectReference: {fileID: 11400000, guid: 9348bd18a9b970a46b6675a9e41e5b59, type: 2}
     - target: {fileID: 6383022333730228090, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_Name
       value: 23_Gaspatchov

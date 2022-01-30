@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class SayPhrase : MonoBehaviour
@@ -9,6 +10,7 @@ public class SayPhrase : MonoBehaviour
     //public GameObject TextOverHead;
     public TextMeshProUGUI TextOverHead_Phrase;
     public TextMeshProUGUI TextOverHead_Name;
+    public GameObject Bubble;
     private Agent m_Agent;
     public PhraseArrays m_PhraseArrays;
     private bool isShowingPhrase = false;
@@ -18,20 +20,19 @@ public class SayPhrase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TextOverHead_Phrase = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         TextOverHead_Phrase.text = "";
+        TextOverHead_Name.text = "";
+
         m_Agent = gameObject.GetComponent<Agent>();
-        
+
+        Bubble.SetActive(false);
+
     }
 
     private void OnMouseEnter()
     {
         if (!isShowingPhrase)
         {
-            //m_Agent.id = Random.Range(0, m_infoTemp.Length - 1);
-            //m_Agent.infos = m_infoTemp[m_Agent.id];
-
-            //SayPhraseWhenACharaDie(Random.Range(0,23));
         }
 
         //if (!isShowingName)
@@ -43,8 +44,6 @@ public class SayPhrase : MonoBehaviour
 
     private void OnMouseExit()
     {
-        //TextOverHead_Mesh.text = "";
-        //TextOverHead_Mesh.enabled = false;
 
         TextOverHead_Name.enabled = false;
         TextOverHead_Name.text = "";
@@ -52,91 +51,100 @@ public class SayPhrase : MonoBehaviour
 
     public void SayPhraseAtBeginning()
     {
-        string PhraseToSay = "";
+        if (!isShowingPhrase)
+        {
+            string PhraseToSay = "";
 
-        if (Random.Range(0, 100) <= 50)
-            PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseBonjour);
-        else
-            PhraseToSay = "";
+            if (Random.Range(0, 100) <= 50)
+                PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseBonjour);
+            else
+                PhraseToSay = "";
 
-        DelayBefore = Random.Range((float)1, (float)3);
-        StartCoroutine("ShowPhrase", PhraseToSay);
+            DelayBefore = Random.Range((float)1, (float)3);
+            StartCoroutine("ShowPhrase", PhraseToSay);
+        }
     }
 
     public void SayPhraseWhenPickedUp()
     {
-        string PhraseToSay = "";
+        if (!isShowingPhrase)
+        {
+            string PhraseToSay = "";
 
-        if (Random.Range(0, 100) <= 20)
-            PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhrasePanic);
-        else
-            PhraseToSay = "";
+            if (Random.Range(0, 100) <= 20)
+                PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhrasePanic);
+            else
+                PhraseToSay = "";
 
 
-        StartCoroutine("ShowPhrase", PhraseToSay);
+            StartCoroutine("ShowPhrase", PhraseToSay);
+        }
     }
 
 
     public void SayPhraseWhenACharaDie(int IDwhoDied)
     {
-        string PhraseToSay = "";
+        if (!isShowingPhrase)
+        {
+            string PhraseToSay = "";
 
-        if (IDwhoDied == 21) //ID de QUICHE
-        {
-            if (Random.Range(0, 100) <= 20)
-                PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseQuiche);
-        }
-        else
-        {
-            S_Relation_Params currentRelation = CheckIfRelation(IDwhoDied);
-            if (currentRelation.validCheck)
+            if (IDwhoDied == 21) //ID de QUICHE
             {
-                switch (currentRelation.RelationType)
+                if (Random.Range(0, 100) <= 20)
+                    PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseQuiche);
+            }
+            else
+            {
+                S_Relation_Params currentRelation = CheckIfRelation(IDwhoDied);
+                if (currentRelation.validCheck)
                 {
-                    case E_relationType.Amoureux:
-                        PhraseToSay = SelectRandomPhraseInArray(currentRelation.Unique_Phrases);
-                        break;
-                    case E_relationType.Business:
-                        PhraseToSay = SelectRandomPhraseInArray(currentRelation.Unique_Phrases);
-                        break;
-                    case E_relationType.Deteste:
-                        PhraseToSay = SelectRandomPhraseInArray(currentRelation.Unique_Phrases);
-                        break;
-                    case E_relationType.Epoux:
-                        PhraseToSay = SelectRandomPhraseInArray(currentRelation.Unique_Phrases);
-                        break;
-                    case E_relationType.FanDe:
-                        PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseDualipoire);
-                        break;
-                    case E_relationType.Jumeaux:
-                        PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseJumeaux);
-                        break;
-                    case E_relationType.Obeis:
-                        if(IDwhoDied == 16)
-                        {
-                            if(CheckIfCharaIsDead(17))
-                                PhraseToSay = currentRelation.Unique_Phrases[2];
-                            else
-                                PhraseToSay = currentRelation.Unique_Phrases[1];
-                        }
-                        else if(IDwhoDied == 17)
-                        {
-                            if (CheckIfCharaIsDead(17))
-                                PhraseToSay = currentRelation.Unique_Phrases[2];
-                            else
-                                PhraseToSay = currentRelation.Unique_Phrases[0];
-                        }
-                        break;
-                    case E_relationType.Pote:
-                        PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhrasePote);
-                        break;
-                    default:
-                        break;
+                    switch (currentRelation.RelationType)
+                    {
+                        case E_relationType.Amoureux:
+                            PhraseToSay = SelectRandomPhraseInArray(currentRelation.Unique_Phrases);
+                            break;
+                        case E_relationType.Business:
+                            PhraseToSay = SelectRandomPhraseInArray(currentRelation.Unique_Phrases);
+                            break;
+                        case E_relationType.Deteste:
+                            PhraseToSay = SelectRandomPhraseInArray(currentRelation.Unique_Phrases);
+                            break;
+                        case E_relationType.Epoux:
+                            PhraseToSay = SelectRandomPhraseInArray(currentRelation.Unique_Phrases);
+                            break;
+                        case E_relationType.FanDe:
+                            PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseDualipoire);
+                            break;
+                        case E_relationType.Jumeaux:
+                            PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseJumeaux);
+                            break;
+                        case E_relationType.Obeis:
+                            if(IDwhoDied == 16)
+                            {
+                                if(CheckIfCharaIsDead(17))
+                                    PhraseToSay = currentRelation.Unique_Phrases[2];
+                                else
+                                    PhraseToSay = currentRelation.Unique_Phrases[1];
+                            }
+                            else if(IDwhoDied == 17)
+                            {
+                                if (CheckIfCharaIsDead(17))
+                                    PhraseToSay = currentRelation.Unique_Phrases[2];
+                                else
+                                    PhraseToSay = currentRelation.Unique_Phrases[0];
+                            }
+                            break;
+                        case E_relationType.Pote:
+                            PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhrasePote);
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
-        }
 
-        StartCoroutine("ShowPhrase", PhraseToSay);
+            StartCoroutine("ShowPhrase", PhraseToSay);
+        }
     }
 
 
@@ -185,10 +193,12 @@ public class SayPhrase : MonoBehaviour
         char[] Text_Array = text.ToCharArray();
         string TempString = "";
 
+        isShowingPhrase = true;
 
         yield return new WaitForSeconds(DelayBefore);
 
-        isShowingPhrase = true;
+        
+        Bubble.SetActive(text != "");
         TextOverHead_Phrase.text = "";
         //TextOverHead_Mesh.enabled = true;
 
@@ -204,7 +214,7 @@ public class SayPhrase : MonoBehaviour
 
 
         TextOverHead_Phrase.text = "";
-        //TextOverHead_Mesh.enabled = false;
+        Bubble.SetActive(false);
 
         isShowingPhrase = false;
     }
