@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Hairs
-      value: 
+      value: Tomatoes_Hairs
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Mouth
