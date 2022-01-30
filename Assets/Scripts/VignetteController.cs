@@ -18,6 +18,9 @@ public class VignetteController : MonoBehaviour
     {
         GameManager gm = GameManager.Get();
 
+        if (gm.playerObjectives.Length == 0)
+            return;
+
         Agent agentPrefab = gm.charactersPrefabs[gm.playerObjectives[gm.otherPlayer]];
         
         nameText.text = agentPrefab.infos.Name;
