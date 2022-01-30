@@ -7,24 +7,20 @@ using TMPro;
 public class SayPhrase : MonoBehaviour
 {
     //public GameObject TextOverHead;
-    private TextMeshProUGUI TextOverHead_Mesh;
+    public TextMeshProUGUI TextOverHead_Phrase;
+    public TextMeshProUGUI TextOverHead_Name;
     private Agent m_Agent;
     public PhraseArrays m_PhraseArrays;
     private bool isShowingPhrase = false;
+    private bool isShowingName = false;
     private float DelayBefore = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        TextOverHead_Mesh = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        TextOverHead_Mesh.text = "--";
+        TextOverHead_Phrase = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        TextOverHead_Phrase.text = "";
         m_Agent = gameObject.GetComponent<Agent>();
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 
@@ -37,23 +33,26 @@ public class SayPhrase : MonoBehaviour
 
             //SayPhraseWhenACharaDie(Random.Range(0,23));
         }
-    }
 
-    private void OnMouseOver()
-    {
-        //TextOverHead_Mesh.text = CharacterName;
-        //TextOverHead_Mesh.enabled = true;
+        //if (!isShowingName)
+        //{
+            TextOverHead_Name.enabled = true;
+            TextOverHead_Name.text = m_Agent.infos.Name;
+        //}
     }
 
     private void OnMouseExit()
     {
         //TextOverHead_Mesh.text = "";
         //TextOverHead_Mesh.enabled = false;
+
+        TextOverHead_Name.enabled = false;
+        TextOverHead_Name.text = "";
     }
 
     public void SayPhraseAtBeginning()
     {
-        string PhraseToSay = "NoPhraseToSay";
+        string PhraseToSay = "";
 
         if (Random.Range(0, 100) <= 50)
             PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseBonjour);
@@ -66,7 +65,7 @@ public class SayPhrase : MonoBehaviour
 
     public void SayPhraseWhenPickedUp()
     {
-        string PhraseToSay = "NoPhraseToSay";
+        string PhraseToSay = "";
 
         if (Random.Range(0, 100) <= 20)
             PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhrasePanic);
@@ -80,7 +79,7 @@ public class SayPhrase : MonoBehaviour
 
     public void SayPhraseWhenACharaDie(int IDwhoDied)
     {
-        string PhraseToSay = "NoPhraseToSay";
+        string PhraseToSay = "";
 
         if (IDwhoDied == 21) //ID de QUICHE
         {
@@ -190,13 +189,13 @@ public class SayPhrase : MonoBehaviour
         yield return new WaitForSeconds(DelayBefore);
 
         isShowingPhrase = true;
-        TextOverHead_Mesh.text = "";
+        TextOverHead_Phrase.text = "";
         //TextOverHead_Mesh.enabled = true;
 
         foreach (char letter in Text_Array)
         {
             TempString += letter;
-            TextOverHead_Mesh.text = TempString;
+            TextOverHead_Phrase.text = TempString;
             yield return new WaitForSeconds(typeSpeed/ Text_Array.Length);
         }
 
@@ -204,7 +203,7 @@ public class SayPhrase : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
 
-        TextOverHead_Mesh.text = "";
+        TextOverHead_Phrase.text = "";
         //TextOverHead_Mesh.enabled = false;
 
         isShowingPhrase = false;
