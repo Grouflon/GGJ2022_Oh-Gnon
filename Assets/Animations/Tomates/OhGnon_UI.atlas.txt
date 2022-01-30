@@ -1,0 +1,55 @@
+
+OhGnon_UI.png
+size: 1085,1085
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arrière-plan
+  rotate: false
+  xy: 2, 503
+  size: 645, 580
+  orig: 645, 580
+  offset: 0, 0
+  index: -1
+Flames
+  rotate: true
+  xy: 649, 568
+  size: 515, 369
+  orig: 515, 369
+  offset: 0, 0
+  index: -1
+Inside
+  rotate: true
+  xy: 453, 144
+  size: 357, 184
+  orig: 357, 184
+  offset: 0, 0
+  index: -1
+Mouth_Closed_Lower Lips
+  rotate: true
+  xy: 649, 75
+  size: 491, 149
+  orig: 491, 149
+  offset: 0, 0
+  index: -1
+Mouth_Closed_Upper Lips
+  rotate: true
+  xy: 800, 75
+  size: 491, 142
+  orig: 491, 142
+  offset: 0, 0
+  index: -1
+Pentagram
+  rotate: true
+  xy: 2, 2
+  size: 499, 449
+  orig: 499, 449
+  offset: 0, 0
+  index: -1
+Teeth
+  rotate: true
+  xy: 944, 68
+  size: 498, 115
+  orig: 498, 115
+  offset: 0, 0
+  index: -1
