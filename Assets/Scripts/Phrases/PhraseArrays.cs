@@ -7,6 +7,7 @@ public class PhraseArrays : ScriptableObject
     //Generique phrase
     public string[] PhraseBonjour;
     public string[] PhrasePanic;
+    public string[] PhraseWhenGrabbed;
 
     //Quiche phrase
     public string[] PhraseJumeaux;

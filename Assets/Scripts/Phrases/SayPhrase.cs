@@ -74,17 +74,27 @@ public class SayPhrase : MonoBehaviour
 
             foreach (SayPhrase charaPhrase in listOfOtherChara)
             {
-                charaPhrase.SayPhraseWhenPickedUp();
+                if(charaPhrase != this)
+                    charaPhrase.SayPhraseWhenOtherPickedUp();
             }
+
+
+
+            string PhraseToSay = "";
+
+            PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhraseWhenGrabbed);
+
+            DelayBefore = 0;
+            typeSpeed = 0.2f;
+            duration = 1f;
+            StartCoroutine("ShowPhrase", PhraseToSay);
         }
     }
 
-    public void SayPhraseWhenPickedUp()
+    public void SayPhraseWhenOtherPickedUp()
     {
         if (!isShowingPhrase)
         {
-
-
             string PhraseToSay = "";
 
             if (Random.Range(0, 100) <= 20)
@@ -220,7 +230,7 @@ public class SayPhrase : MonoBehaviour
 
     private string SelectRandomPhraseInArray(string[] Array)
     {
-        return Array[Random.Range(0, Array.Length - 1)];
+        return Array[Random.Range(0, Array.Length)];
     }
 
     IEnumerator ShowPhrase(string text)

@@ -23,11 +23,21 @@ MonoBehaviour:
   PhrasePanic:
   - Aaaaah!
   - Noooon!
-  - Pas moi!
+  - Pas lui!
   - Help!
   - Oskour!
   - Aled!
   - Sauce qui peut!!!
+  - Pas elle!
+  - Tu m'aura pas
+  PhraseWhenGrabbed:
+  - Pas moi!
+  - "On m'a attrap\xE9!"
+  - Me tuez pas!
+  - Maman!
+  - Hey pour qui tu te prend
+  - "Ouch, a\xEFe!"
+  - "M\xE9creant"
   PhraseJumeaux:
   - 'Aaaaaah '
   - Nooon, ma vie n'a plus aucun sens sans mon jumeaux
@@ -44,6 +54,8 @@ MonoBehaviour:
   - Bro !
   - Mange tes morts mon pote.
   - Une salade de fruit !
+  - Tu va nous manquer meuf.
+  - Yasss Queen
   PhraseQuiche:
   - Ah le batard, il me devait 10 balles.
   - "Bon d\xE9barras!"
