@@ -41,3 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Dial_Bubble
+    uniqueID: 1397038957
+    locked: 0

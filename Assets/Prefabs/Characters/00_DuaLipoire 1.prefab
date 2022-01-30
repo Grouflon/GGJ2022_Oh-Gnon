@@ -60,32 +60,20 @@ PrefabInstance:
       value: Chocked_Eyes
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
-      propertyPath: Hair
-      value: Tomatoes_Hairs
-      objectReference: {fileID: 0}
-    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Hats
-      value: Tomatoe_Crown
-      objectReference: {fileID: 0}
-    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
-      propertyPath: Head
-      value: Tomatoes_Head
+      value: Pear_Caps
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Chest
-      value: Chest_Tomatoes_Shirt4
+      value: Chest_Pear_Shirt1
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Hairs
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
-      propertyPath: Mouth
-      value: Mouth_Dumb
-      objectReference: {fileID: 0}
-    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Pants
-      value: Tomatoes_Without_Pants
+      value: Pear_Without_Pants
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Eyebrows
@@ -93,19 +81,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Genitals
-      value: Tomatoe_Vulve
+      value: Pear_Zizi
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Mustaches
-      value: 
+      value: Long
       objectReference: {fileID: 0}
     - target: {fileID: 5697866203614312016, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: infos
       value: 
-      objectReference: {fileID: 11400000, guid: 11bfacb295dfb0649983670486e01460, type: 2}
+      objectReference: {fileID: 11400000, guid: daab2835111110c44bc8aef8518a4f51, type: 2}
     - target: {fileID: 6383022333730228090, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_Name
-      value: 17_LadyMarmande
+      value: 00_DuaLipoire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}

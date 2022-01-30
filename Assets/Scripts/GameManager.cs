@@ -116,8 +116,8 @@ public class GameManager : MonoBehaviour
                 playerObjectives[1] = Random.Range(0, charactersPrefabs.Count);
 
                 AgentManager.Get().SpawnAgents(charactersPrefabs);
-                Debug.Log(playerObjectives[0]);
-                Debug.Log(playerObjectives[1]);
+                Debug.Log(charactersPrefabs[playerObjectives[0]].infos.Name);
+                Debug.Log(charactersPrefabs[playerObjectives[1]].infos.Name);
 
                 dropZonesContainer.SetActive(true);
                 vignetteController.gameObject.SetActive(true);

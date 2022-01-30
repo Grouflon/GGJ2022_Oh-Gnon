@@ -55,13 +55,53 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: Eyes
+      value: Neutral_Eyes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: Hats
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: Head
+      value: Tomatoes_Head
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: Chest
+      value: Chest_Tomatoes_Shirt1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: Hairs
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: Mouth
+      value: Mouth_Dumb
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: Pants
+      value: Tomatoes_Without_Pants
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: Eyebrows
+      value: Neutral_Eyebrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: Genitals
+      value: Tomatoes_Zizi
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: Mustaches
+      value: Small
+      objectReference: {fileID: 0}
     - target: {fileID: 5697866203614312016, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: infos
       value: 
-      objectReference: {fileID: 11400000, guid: daab2835111110c44bc8aef8518a4f51, type: 2}
+      objectReference: {fileID: 11400000, guid: 7f4b7ddf592d27a4789bb44d00743f9a, type: 2}
     - target: {fileID: 6383022333730228090, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_Name
-      value: 00_DuaLipoire
+      value: 09_Math-Math
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
