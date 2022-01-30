@@ -13,17 +13,8 @@ MonoBehaviour:
   m_Name: 23_Gaspatchov
   m_EditorClassIdentifier: 
   Name: Gaspatchov
-  skinProperty: base
-  Fruit: 2
-  Cloth: 2
-  Genital: 3
-  Expression: 1
-  Hat: 1
-  FacialHair: 1
-  Voice: 2
   Relations:
-  - validCheck: 0
-    RelationType: 5
+  - RelationType: 5
     ID_Targets: 050000000d0000001000000011000000
     Unique_Phrases:
     - Mangeons les riches ah ah!
