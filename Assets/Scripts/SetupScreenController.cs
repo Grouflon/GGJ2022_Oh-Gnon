@@ -18,8 +18,6 @@ public class SetupScreenController : MonoBehaviour
     public Button startButton;
     public TMP_Text messageText;
     public Button creditsButton;
-    public Button closeCreditsButton;
-    public GameObject credits;
 
     // Start is called before the first frame update
     void Start()
@@ -49,20 +47,6 @@ public class SetupScreenController : MonoBehaviour
             {
                 GameManager.Get().setGameState(GameState.Game);
             });
-
-        creditsButton.onClick.AddListener(
-            () =>
-            {
-                credits.SetActive(true);
-            }
-        );
-
-        closeCreditsButton.onClick.AddListener(
-            () =>
-            {
-                credits.SetActive(false);
-            }
-        );
 
         updateUI();
     }
@@ -127,14 +111,12 @@ public class SetupScreenController : MonoBehaviour
                 }
                 else
                 {
-                    messageText.text = "You must enter a number";
+                    messageText.text = "Vous devez rentrer un nombre (max 10 chiffres)";
                 }
             }
         }
 
         // Start Button
         startButton.interactable = (gm.localPlayer == 0 || gm.localPlayer == 1) && isSeedValid;
-
-        credits.SetActive(false);
     }
 }
