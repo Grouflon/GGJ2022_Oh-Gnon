@@ -16,28 +16,33 @@ public class AgentAudio : MonoBehaviour
         agent.OnAgentStateChanged += OnAgentStateChanged;
 
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = Random.Range(0.2f, 0.5f);
-        barkTime = Random.Range(0f, 15f);
+        audioSource.volume = Random.Range(0.01f, 0.02f);
+        barkTime = Random.Range(2f, 15f);
     }
 
-    void OnAgentStateChanged(Agent agent, AgentState state)
+    void OnAgentStateChanged(Agent agent, AgentState previousState, AgentState currentState)
     {
-        if(state == AgentState.DRAGGED)
+        if(previousState != AgentState.DRAGGED && currentState == AgentState.DRAGGED)
         {
-            audioSource.volume = 1f;
-            SoundManager.Get().PlayRandomSound(SoundType.FEAR, audioSource);
+            Debug.Log("AUDIO : Play FEAR");
+            SoundManager.Get().PlayRandomSound(SoundType.FEAR);
         }
 
-        if (state == AgentState.DEAD)
+        if(previousState == AgentState.DRAGGED)
         {
-            audioSource.volume = 1f;
-            SoundManager.Get().PlayRandomSound(SoundType.DEATH, audioSource);
+            //STOP drag sound
+            SoundManager.Get().StopGeneralAudioSource();
         }
 
-        if (agent.GetState() == AgentState.WALK || agent.GetState() == AgentState.IDLE)
+        if (currentState == AgentState.DEAD)
         {
-            audioSource.volume = Random.Range(0.2f, 1f);
+            SoundManager.Get().PlayRandomSound(SoundType.DEATH);
         }
+
+        /*if (agent.GetState() == AgentState.WALK || agent.GetState() == AgentState.IDLE)
+        {
+            audioSource.volume = Random.Range(0.1f, 0.4f);
+        }*/
     }
 
     void Update()

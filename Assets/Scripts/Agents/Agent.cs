@@ -28,7 +28,7 @@ public class Agent : MonoBehaviour
 
     public delegate void AgentDelegate(Agent _agent);
     public event AgentDelegate OnAgentKilled;
-    public delegate void AgentStateDelegate(Agent _agent, AgentState _state);
+    public delegate void AgentStateDelegate(Agent _agent, AgentState _previousState, AgentState _currentState);
     public event AgentStateDelegate OnAgentStateChanged;
 
     AudioSource audioSource;
@@ -69,9 +69,13 @@ public class Agent : MonoBehaviour
 
     public void SetState(AgentState state)
     {
-        agentState = state;
 
-        if (OnAgentStateChanged != null) OnAgentStateChanged(this, agentState);
+        if (agentState == state)
+            return;
+
+        if (OnAgentStateChanged != null) OnAgentStateChanged(this, agentState, state);
+
+        agentState = state;
 
         if (agentState == AgentState.WALK)
         {

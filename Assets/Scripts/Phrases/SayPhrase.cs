@@ -70,9 +70,9 @@ public class SayPhrase : MonoBehaviour
         }
     }
 
-    public void WhenPickedUp(Agent _agent, AgentState _state)
+    public void WhenPickedUp(Agent _agent, AgentState _previousState, AgentState _currentState)
     {
-        if (_state == AgentState.DRAGGED)
+        if (_currentState == AgentState.DRAGGED)
         {
             SayPhrase[] listOfOtherChara = GameObject.FindObjectsOfType<SayPhrase>();
 
