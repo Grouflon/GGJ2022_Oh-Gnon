@@ -460,8 +460,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4827849981866885195, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -361.5
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7303955841632185946, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_Mesh
