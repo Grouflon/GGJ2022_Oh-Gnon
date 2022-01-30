@@ -41,7 +41,9 @@ public class DropZone : MonoBehaviour
     public void Use()
     {
         if (m_playExplosion)
+        {
             Invoke("Explosion", 0.5f);
+        }
     }
 
     private void Explosion()

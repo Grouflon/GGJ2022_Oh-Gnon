@@ -25,6 +25,7 @@ public class Agent : MonoBehaviour
 {
     public int id = -1;
     public CharacterInfos infos;
+    public GameObject deathFX;
 
     AgentState agentState = AgentState.IDLE;
     Vector3 destination;
@@ -66,6 +67,7 @@ public class Agent : MonoBehaviour
 
     public void Kill(EFatality p_fatality)
     {
+        if (OnAgentKilled != null) OnAgentKilled(this);
         StartCoroutine(_Kill(p_fatality));
     }
 
@@ -85,7 +87,10 @@ public class Agent : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
 
         SetState(AgentState.DEAD);
-        if (OnAgentKilled != null) OnAgentKilled(this);
+
+        if (deathFX != null)
+            Instantiate(deathFX, transform.position, transform.rotation);
+
         Destroy(gameObject);
     }
 

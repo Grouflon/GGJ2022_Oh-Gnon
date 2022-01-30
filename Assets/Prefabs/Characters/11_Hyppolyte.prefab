@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: infos
       value: 
       objectReference: {fileID: 11400000, guid: d7f5dd4da42cf04438481a6be0e62f87, type: 2}
+    - target: {fileID: 5697866203614312016, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: deathFX
+      value: 
+      objectReference: {fileID: 3619070796288349985, guid: 93cf31774d73b794db58d62538556c9d, type: 3}
     - target: {fileID: 6383022333730228090, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_Name
       value: 11_Hyppolyte
