@@ -37,7 +37,10 @@ public class VignetteController : MonoBehaviour
     {
         forfeitButton.onClick.AddListener(
         () => {
+            if (GameManager.Get().getGameState() == GameState.Game)
+            {
             GameManager.Get().setGameState(GameState.GameOver);
+            }
         });
     }
 }
