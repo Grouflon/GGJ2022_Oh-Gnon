@@ -2074,6 +2074,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -45.505
       objectReference: {fileID: 0}
+    - target: {fileID: 2867792087017470609, guid: e720a4190e1d86a45b6e3adf3e0db017, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961410089729490344, guid: e720a4190e1d86a45b6e3adf3e0db017, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e720a4190e1d86a45b6e3adf3e0db017, type: 3}
 --- !u!114 &9064617463498777911 stripped
@@ -2127,6 +2135,9 @@ MonoBehaviour:
   seedField: {fileID: 9064617465416621211}
   startButton: {fileID: 9064617463795783776}
   messageText: {fileID: 899207202}
+  creditsButton: {fileID: 0}
+  closeCreditsButton: {fileID: 0}
+  credits: {fileID: 0}
 --- !u!114 &9064617465353895193 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2132395876239430663, guid: e720a4190e1d86a45b6e3adf3e0db017, type: 3}

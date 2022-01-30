@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,9 @@ public class MenuController : MonoBehaviour
     public Button jouerButton;
     public Button creditsButton;
     public Button quitterButton;
+
+    public Button closeCreditsButton;
+    public GameObject credits;
 
     public RectTransform title;
     public RectTransform titlePear;
@@ -24,19 +28,38 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         jouerButton.onClick.AddListener(
-        () => {
-            GameManager.Get().setGameState(GameState.Setup);
-        });
+            () =>
+            {
+                GameManager.Get().setGameState(GameState.Setup);
+            });
 
         creditsButton.onClick.AddListener(
-        () => {
+            () =>
+            {
 
-        });
+            });
 
         quitterButton.onClick.AddListener(
-        () => {
-            Application.Quit();
-        });
+            () =>
+            {
+                Application.Quit();
+            });
+
+        creditsButton.onClick.AddListener(
+            () =>
+            {
+                credits.SetActive(true);
+            }
+        );
+
+        closeCreditsButton.onClick.AddListener(
+            () =>
+            {
+                credits.SetActive(false);
+            }
+        );
+
+        credits.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,7 +70,7 @@ public class MenuController : MonoBehaviour
             float titleAngle = Mathf.Sin(titleRatio * Mathf.PI * 2f) * Mathf.Deg2Rad * titleAmplitude;
             title.localRotation = Quaternion.Euler(0f, 0f, Mathf.Rad2Deg * titleAngle);
         }
-        
+
         {
             float pearRatio = Time.time / titlePearPeriod;
             float pearAngle = Mathf.Sin(pearRatio * Mathf.PI * 2f) * Mathf.Deg2Rad * titlePearAmplitude;

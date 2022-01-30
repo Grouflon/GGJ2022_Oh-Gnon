@@ -680,6 +680,9 @@ MonoBehaviour:
   seedField: {fileID: 2132395876680709509}
   startButton: {fileID: 2132395875079795070}
   messageText: {fileID: 899207202}
+  creditsButton: {fileID: 0}
+  closeCreditsButton: {fileID: 0}
+  credits: {fileID: 0}
 --- !u!1 &2132395875245275395
 GameObject:
   m_ObjectHideFlags: 0
