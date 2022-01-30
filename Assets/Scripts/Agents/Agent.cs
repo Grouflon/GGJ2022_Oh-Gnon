@@ -111,7 +111,7 @@ public class Agent : MonoBehaviour
     {
         Vector3 move = (destination - transform.position).normalized * agentSpeed;
         transform.position = transform.position + move;
-        if (Vector3.Distance(transform.position, destination) < 0.1f)
+        if (Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(destination.x, destination.y)) < 0.1f)
         {
             SetState(AgentState.IDLE);
         }
