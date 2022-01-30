@@ -76,5 +76,13 @@ public class DragManager : MonoBehaviour
             dropZone.Select();
             m_currentDropZone = dropZone;
         }
+        else
+        {
+            if (m_currentDropZone != null)
+            {
+                m_currentDropZone.Unselect();
+                m_currentDropZone = null;
+            }
+        }
     }
 }
