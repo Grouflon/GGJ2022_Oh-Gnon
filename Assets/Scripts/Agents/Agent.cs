@@ -15,6 +15,12 @@ public enum AgentState
     DEAD
 }
 
+public enum EFatality
+{
+    MOUTH,
+    PENTACLE
+}
+
 public class Agent : MonoBehaviour
 {
     public int id = -1;
@@ -50,7 +56,7 @@ public class Agent : MonoBehaviour
     private void OnDestroy()
     {
         if (DragManager.Get() == null)
-            return; 
+            return;
     }
 
     public AgentState GetState()
@@ -58,8 +64,26 @@ public class Agent : MonoBehaviour
         return agentState;
     }
 
-    public void Kill()
+    public void Kill(EFatality p_fatality)
     {
+        StartCoroutine(_Kill(p_fatality));
+    }
+
+    private IEnumerator _Kill(EFatality p_fatality)
+    {
+        switch (p_fatality)
+        {
+            case EFatality.MOUTH:
+                skeletonAnimation.AnimationName = "Disappear";
+                break;
+
+            case EFatality.PENTACLE:
+                skeletonAnimation.AnimationName = "Explosion";
+                break;
+        }
+
+        yield return new WaitForSeconds(0.75f);
+
         SetState(AgentState.DEAD);
         if (OnAgentKilled != null) OnAgentKilled(this);
         Destroy(gameObject);
@@ -94,7 +118,7 @@ public class Agent : MonoBehaviour
 
         if (agentState == AgentState.IDLE)
         {
-            
+
             idleCurrentTimer = 0f;
             idleTime = AgentManager.Get().GetRandomIdleTime();
             skeletonAnimation.AnimationName = "Idle";
