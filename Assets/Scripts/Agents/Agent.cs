@@ -73,6 +73,8 @@ public class Agent : MonoBehaviour
 
     private IEnumerator _Kill(EFatality p_fatality)
     {
+        GetComponent<Collider2D>().enabled = false;
+
         switch (p_fatality)
         {
             case EFatality.MOUTH:
@@ -83,14 +85,12 @@ public class Agent : MonoBehaviour
             case EFatality.PENTACLE:
                 skeletonAnimation.AnimationName = "Explosion";
                 yield return new WaitForSeconds(0.933f);
+                if (deathFX != null)
+                    Instantiate(deathFX, transform.position, transform.rotation);
                 break;
         }
 
         SetState(AgentState.DEAD);
-
-        if (deathFX != null)
-            Instantiate(deathFX, transform.position, transform.rotation);
-
         Destroy(gameObject);
     }
 
