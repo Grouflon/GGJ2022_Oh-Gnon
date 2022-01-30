@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Genitals
-      value: Tomatoes_Zizi
+      value: Tomatoe_Zizi
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Mustaches
@@ -101,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 4aff2c08e2799ef41803596f70c509ce, type: 2}
     - target: {fileID: 6383022333730228090, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_Name
-      value: 07_KurtDeBoeuf
+      value: 07_KurtDeBoeuf 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}

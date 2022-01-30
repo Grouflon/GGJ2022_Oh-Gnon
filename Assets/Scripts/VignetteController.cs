@@ -20,6 +20,9 @@ public class VignetteController : MonoBehaviour
         if (gm.getGameState() != GameState.Game)
             return;
 
+        if (gm.playerObjectives.Length == 0)
+            return;
+
         Agent agentPrefab = gm.charactersPrefabs[gm.playerObjectives[gm.otherPlayer]];
         
         nameText.text = agentPrefab.infos.Name;

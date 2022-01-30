@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Hairs
-      value: 
+      value: Tomatoes_Hairs
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Mouth
@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 5697866203614312016, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: infos
       value: 
-      objectReference: {fileID: 11400000, guid: cd9109e034f752742b0bb744595b29b5, type: 2}
+      objectReference: {fileID: 11400000, guid: ce4aa01e178c0b840960dedb16f5c710, type: 2}
     - target: {fileID: 6383022333730228090, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_Name
       value: 12_Flibuste

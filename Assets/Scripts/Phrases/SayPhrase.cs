@@ -28,7 +28,7 @@ public class SayPhrase : MonoBehaviour
 
         m_Agent = gameObject.GetComponent<Agent>();
 
-        m_Agent.OnAgentStateChanged += SayPhraseWhenPickedUp;
+        m_Agent.OnAgentStateChanged += WhenPickedUp;
 
         Bubble.SetActive(false);
 
@@ -70,22 +70,35 @@ public class SayPhrase : MonoBehaviour
         }
     }
 
-    public void SayPhraseWhenPickedUp(Agent _agent, AgentState _state)
+    public void WhenPickedUp(Agent _agent, AgentState _state)
     {
-        if(_state == AgentState.DRAGGED)
+        if (_state == AgentState.DRAGGED)
         {
-            if (!isShowingPhrase)
+            SayPhrase[] listOfOtherChara = GameObject.FindObjectsOfType<SayPhrase>();
+
+            foreach (SayPhrase charaPhrase in listOfOtherChara)
             {
-                string PhraseToSay = "";
-
-                if (Random.Range(0, 100) <= 20)
-                    PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhrasePanic);
-
-                DelayBefore = 0;
-                typeSpeed = 0.2f;
-                duration = 1.5f;
-                StartCoroutine("ShowPhrase", PhraseToSay);
+                charaPhrase.SayPhraseWhenPickedUp();
             }
+
+        }
+    }
+
+    public void SayPhraseWhenPickedUp()
+    {
+        if (!isShowingPhrase)
+        {
+
+
+            string PhraseToSay = "";
+
+            if (Random.Range(0, 100) <= 20)
+                PhraseToSay = SelectRandomPhraseInArray(m_PhraseArrays.PhrasePanic);
+
+            DelayBefore = 0;
+            typeSpeed = 0.2f;
+            duration = 1.5f;
+            StartCoroutine("ShowPhrase", PhraseToSay);
         }
     }
 
