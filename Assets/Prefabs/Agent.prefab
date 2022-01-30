@@ -519,6 +519,13 @@ MonoBehaviour:
   id: -1
   infos: {fileID: 0}
   deathFX: {fileID: 0}
+  idles:
+  - Anim: Random_HelicoPenis
+    Duration: 0.66
+  - Anim: Random_Scratch
+    Duration: 1.5
+  - Anim: Random_Stretch
+    Duration: 1.3
 --- !u!114 &4836928581341913630
 MonoBehaviour:
   m_ObjectHideFlags: 0

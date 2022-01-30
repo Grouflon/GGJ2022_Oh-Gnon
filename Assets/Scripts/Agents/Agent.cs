@@ -21,11 +21,20 @@ public enum EFatality
     PENTACLE
 }
 
+[System.Serializable]
+public struct IdleAnim
+{
+    public string Anim;
+    public float Duration;
+}
+
 public class Agent : MonoBehaviour
 {
     public int id = -1;
     public CharacterInfos infos;
     public GameObject deathFX;
+
+    public List<IdleAnim> idles;
 
     AgentState agentState = AgentState.IDLE;
     Vector3 destination;
@@ -127,6 +136,11 @@ public class Agent : MonoBehaviour
             idleCurrentTimer = 0f;
             idleTime = AgentManager.Get().GetRandomIdleTime();
             skeletonAnimation.AnimationName = "Idle";
+
+            if (Random.Range(0f, 1f) > 0.9f)
+            {
+                StartCoroutine(_PlayRandomIdle());
+            }
         }
 
         if (agentState == AgentState.DRAGGED)
@@ -141,6 +155,14 @@ public class Agent : MonoBehaviour
                 otherAgent.OnOtherAgentGrabbed(this);
             }
         }
+    }
+
+    private IEnumerator _PlayRandomIdle()
+    {
+        var randIdle = idles[Random.Range(0, idles.Count)];
+        skeletonAnimation.AnimationName = randIdle.Anim;
+        idleTime += randIdle.Duration;
+        yield return new WaitForSeconds(randIdle.Duration);
     }
 
     void Idle()
