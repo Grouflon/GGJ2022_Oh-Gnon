@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Spine.Unity;
 using TMPro;
 
@@ -8,6 +9,7 @@ public class VignetteController : MonoBehaviour
 {
     public SkeletonAnimation skeletonAnimation;
     public TMP_Text nameText;
+    public Button forfeitButton;
 
     void Awake()
     {
@@ -33,5 +35,9 @@ public class VignetteController : MonoBehaviour
 
     void Start()
     {
+        forfeitButton.onClick.AddListener(
+        () => {
+            GameManager.Get().setGameState(GameState.GameOver);
+        });
     }
 }

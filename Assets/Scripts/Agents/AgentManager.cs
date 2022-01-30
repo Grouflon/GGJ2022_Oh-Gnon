@@ -91,7 +91,7 @@ public class AgentManager : MonoBehaviour
         agents = new List<Agent>();
 
         Vector3 brWorldPoint = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width - 50f, 20f, 0f));
-        Vector3 tlWorldPoint = Camera.main.ScreenToWorldPoint(new Vector3(50f, Screen.height - 100f, 0f));
+        Vector3 tlWorldPoint = Camera.main.ScreenToWorldPoint(new Vector3(50f, Screen.height - 130f, 0f));
         brWorldPoint.z = 0f;
         tlWorldPoint.z = 0f;
         TopLeftCorner.transform.position = tlWorldPoint;
