@@ -14,11 +14,11 @@ public class GameOverScreenController : MonoBehaviour
     {
         if (GameManager.Get().isWinning)
         {
-            text.text = "YOU WIN";
+            text.text = "GAGNÉ";
         }
         else
         {
-            text.text = "YOU LOSE";
+            text.text = "PERDU";
         }
     }
 
