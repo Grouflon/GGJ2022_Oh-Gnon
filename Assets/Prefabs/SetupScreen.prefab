@@ -674,12 +674,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 1, g: 0, b: 0, a: 1}
+  selectedColor: {r: 0.5647059, g: 0.827451, b: 0.69411767, a: 1}
   p1Button: {fileID: 2132395874773339177}
   p2Button: {fileID: 2132395876239430663}
   seedField: {fileID: 2132395876680709509}
   startButton: {fileID: 2132395875079795070}
   messageText: {fileID: 899207202}
+  creditsButton: {fileID: 0}
 --- !u!1 &2132395875245275395
 GameObject:
   m_ObjectHideFlags: 0

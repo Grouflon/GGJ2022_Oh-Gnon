@@ -184,15 +184,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637083011, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: selectedColor.b
-      value: 0.5019608
+      value: 0.69411767
       objectReference: {fileID: 0}
     - target: {fileID: 1637083011, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: selectedColor.g
-      value: 0.8862746
+      value: 0.82745105
       objectReference: {fileID: 0}
     - target: {fileID: 1637083011, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: selectedColor.r
-      value: 0.6627451
+      value: 0.5647059
       objectReference: {fileID: 0}
     - target: {fileID: 1938900680917714714, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_AnchorMax.y
@@ -224,15 +224,15 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: ac131a44b05acb141b26aaa4ce488a7d, type: 2}
     - target: {fileID: 1938900680917714717, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.5019608
+      value: 0.69411767
       objectReference: {fileID: 0}
     - target: {fileID: 1938900680917714717, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.8862745
+      value: 0.827451
       objectReference: {fileID: 0}
     - target: {fileID: 1938900680917714717, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.6626853
+      value: 0.5647059
       objectReference: {fileID: 0}
     - target: {fileID: 1938900680917714717, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_fontSizeBase
@@ -248,7 +248,7 @@ PrefabInstance:
       objectReference: {fileID: 6435500450699976159, guid: ac131a44b05acb141b26aaa4ce488a7d, type: 2}
     - target: {fileID: 1938900680917714717, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4286636713
+      value: 4289844112
       objectReference: {fileID: 0}
     - target: {fileID: 1938900681314188141, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_fontAsset
@@ -625,7 +625,7 @@ PrefabInstance:
     - target: {fileID: 9064617464099934239, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_text
       value: "Choisissez un r\xF4le\nUn participant doit \xEAtre Joueureuse 1, l'autre
-        Joueureuse 2."
+        Joueureuse 2"
       objectReference: {fileID: 0}
     - target: {fileID: 9064617464247745222, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_IsActive
@@ -633,7 +633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9064617464417010372, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_text
-      value: 'Joueureuse 2
+      value: 'Joueur.euse 2
 
 '
       objectReference: {fileID: 0}
@@ -687,7 +687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9064617465211595837, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_text
-      value: "Entrez le m\xEAme nombre de votre choix sur les deux appareils."
+      value: "Entrez le m\xEAme nombre de votre choix sur les deux appareils"
       objectReference: {fileID: 0}
     - target: {fileID: 9064617465211595837, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_fontAsset
@@ -715,11 +715,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9064617465216664291, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -400.44995
+      value: -400.44998
       objectReference: {fileID: 0}
     - target: {fileID: 9064617465308561705, guid: 93b2aa73ddba10443aec761c5d098705, type: 3}
       propertyPath: m_text
-      value: 'Joueureuse 1
+      value: 'Joueur.euse 1
 
 '
       objectReference: {fileID: 0}
