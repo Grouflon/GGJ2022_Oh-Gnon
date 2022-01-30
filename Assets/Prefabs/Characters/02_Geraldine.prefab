@@ -17,11 +17,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1460102523067099903, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.5749309
       objectReference: {fileID: 0}
     - target: {fileID: 1460102523067099903, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.3225265
       objectReference: {fileID: 0}
     - target: {fileID: 1460102523067099903, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Hats
-      value: 
+      value: Pear_Caps
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Head
@@ -77,11 +77,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Hairs
-      value: Pear_Hairs
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Mouth
-      value: Mouth_Sad
+      value: Mouth_Dumb
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Pants
@@ -93,11 +93,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Genitals
-      value: Pear_Vulve
+      value: Pear_Zizi
       objectReference: {fileID: 0}
     - target: {fileID: 4836928581341913630, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: Mustaches
-      value: 
+      value: Long
       objectReference: {fileID: 0}
     - target: {fileID: 5697866203614312016, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: infos
