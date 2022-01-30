@@ -28,9 +28,8 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         jouerButton.onClick.AddListener(
-            () =>
-            {
-                GameManager.Get().setGameState(GameState.Setup);
+            () => {
+                GameManager.Get().setGameState(GameState.Rules);
             });
 
         creditsButton.onClick.AddListener(

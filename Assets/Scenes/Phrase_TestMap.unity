@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 30579105d13906442868932b01982b4a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 30579105d13906442868932b01982b4a, type: 3}
       propertyPath: m_Name
       value: 09_Math-Math
@@ -237,6 +241,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: 08dcd1f3b32bcde44b6bdcf9d341677d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 08dcd1f3b32bcde44b6bdcf9d341677d, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 08dcd1f3b32bcde44b6bdcf9d341677d, type: 3}
@@ -300,6 +308,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: f8dd555aca5392e45bebb7ce41df7133, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: f8dd555aca5392e45bebb7ce41df7133, type: 3}
       propertyPath: m_Name
       value: 13_VincentBolognaise
@@ -359,6 +371,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: 75dbe049c487ba048bdc187688deb4e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 75dbe049c487ba048bdc187688deb4e1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 75dbe049c487ba048bdc187688deb4e1, type: 3}
@@ -489,6 +505,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 563b9adc36b2b0344986a5b0ce2fed88, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 563b9adc36b2b0344986a5b0ce2fed88, type: 3}
       propertyPath: m_Name
       value: 08_Tom-Tom
@@ -548,6 +568,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: 9d67537a2feb901478eac312b11c5160, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 9d67537a2feb901478eac312b11c5160, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 9d67537a2feb901478eac312b11c5160, type: 3}
@@ -611,6 +635,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 1937dc00192d8c644b84f6dd7beab5cd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 1937dc00192d8c644b84f6dd7beab5cd, type: 3}
       propertyPath: m_Name
       value: 16_LordTomatillo
@@ -670,6 +698,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: 6aee0731ec10f924bacdef6b0cdd800c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 6aee0731ec10f924bacdef6b0cdd800c, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 6aee0731ec10f924bacdef6b0cdd800c, type: 3}
@@ -776,9 +808,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2f151ff21cf8144a5f0df6c63f921d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Fatality: 0
+  m_playExplosion: 0
   m_explosionFX: {fileID: 0}
-  m_defaultColor: {r: 0.41176474, g: 1, b: 0.75294125, a: 1}
-  m_overColor: {r: 1, g: 0.3160377, b: 0.3160377, a: 1}
+  m_idleAnimation: 
+  m_inUseAnimation: 
 --- !u!61 &604512446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -903,9 +937,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2f151ff21cf8144a5f0df6c63f921d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Fatality: 0
+  m_playExplosion: 0
   m_explosionFX: {fileID: 0}
-  m_defaultColor: {r: 0.41176474, g: 1, b: 0.75294125, a: 1}
-  m_overColor: {r: 1, g: 0.3160377, b: 0.3160377, a: 1}
+  m_idleAnimation: 
+  m_inUseAnimation: 
 --- !u!61 &754603783
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -985,6 +1021,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: 302c5941f33f91b4995d1289b42efa11, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 302c5941f33f91b4995d1289b42efa11, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 302c5941f33f91b4995d1289b42efa11, type: 3}
@@ -1091,9 +1131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2f151ff21cf8144a5f0df6c63f921d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Fatality: 0
+  m_playExplosion: 0
   m_explosionFX: {fileID: 0}
-  m_defaultColor: {r: 0.41176474, g: 1, b: 0.75294125, a: 1}
-  m_overColor: {r: 1, g: 0.3160377, b: 0.3160377, a: 1}
+  m_idleAnimation: 
+  m_inUseAnimation: 
 --- !u!61 &913657456
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1173,6 +1215,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: f24e38a7a0e60cc4e9d62a71f6a9e475, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: f24e38a7a0e60cc4e9d62a71f6a9e475, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: f24e38a7a0e60cc4e9d62a71f6a9e475, type: 3}
@@ -1279,9 +1325,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2f151ff21cf8144a5f0df6c63f921d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Fatality: 0
+  m_playExplosion: 0
   m_explosionFX: {fileID: 0}
-  m_defaultColor: {r: 0.41176474, g: 1, b: 0.75294125, a: 1}
-  m_overColor: {r: 1, g: 0.3160377, b: 0.3160377, a: 1}
+  m_idleAnimation: 
+  m_inUseAnimation: 
 --- !u!61 &949712317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1398,6 +1446,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 2abb18e52483ad14d8b68c514a1a9062, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 2abb18e52483ad14d8b68c514a1a9062, type: 3}
       propertyPath: m_Name
       value: 19_ThomasFarcie
@@ -1457,6 +1509,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: a468a9ce20d4ae64ebd793fee0fc438b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: a468a9ce20d4ae64ebd793fee0fc438b, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: a468a9ce20d4ae64ebd793fee0fc438b, type: 3}
@@ -1520,6 +1576,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 0997f3978f97bb24fb25c335a9a3844b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 0997f3978f97bb24fb25c335a9a3844b, type: 3}
       propertyPath: m_Name
       value: 15_Quetchoppe
@@ -1579,6 +1639,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: f8c6a2397230e9749957c590d051047d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: f8c6a2397230e9749957c590d051047d, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: f8c6a2397230e9749957c590d051047d, type: 3}
@@ -1726,6 +1790,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 2a72be2766112d7469f1df5c4d2f4134, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 2a72be2766112d7469f1df5c4d2f4134, type: 3}
       propertyPath: m_Name
       value: 01_Poirotte
@@ -1785,6 +1853,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: 4c2b6cbd127eab348baae541b94b2b10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 4c2b6cbd127eab348baae541b94b2b10, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 4c2b6cbd127eab348baae541b94b2b10, type: 3}
@@ -1848,6 +1920,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: e3aecc8842e2db5439fe730ec5c8a667, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: e3aecc8842e2db5439fe730ec5c8a667, type: 3}
       propertyPath: m_Name
       value: 04_Compote
@@ -1907,6 +1983,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: 9d5b6bbe1910cdd43bb5f64a156088a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 9d5b6bbe1910cdd43bb5f64a156088a8, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 9d5b6bbe1910cdd43bb5f64a156088a8, type: 3}
@@ -1970,6 +2050,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 72fed93e9d7f59b4a895dcc0da8657d1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 72fed93e9d7f59b4a895dcc0da8657d1, type: 3}
       propertyPath: m_Name
       value: 02_Geraldine
@@ -2031,6 +2115,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 4021ca9c5bd2025448772dc50cd00e4e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 4021ca9c5bd2025448772dc50cd00e4e, type: 3}
       propertyPath: m_Name
       value: 14_RobertDeNiroTomata
@@ -2090,6 +2178,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: 6d5f887a214f62d4384d42e25899d162, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 6d5f887a214f62d4384d42e25899d162, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 6d5f887a214f62d4384d42e25899d162, type: 3}
@@ -2197,6 +2289,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 2c428df277fd3954688b9b3d35240261, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 2c428df277fd3954688b9b3d35240261, type: 3}
       propertyPath: m_Name
       value: 10_CeriseLaTomate
@@ -2258,6 +2354,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 6d2a72718584fd244a86330ae9528718, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 6d2a72718584fd244a86330ae9528718, type: 3}
       propertyPath: m_Name
       value: 23_Gaspatchov
@@ -2317,6 +2417,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: 10f54bd4b1c1a134e9f640a419c69989, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599361097902646613, guid: 10f54bd4b1c1a134e9f640a419c69989, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 10f54bd4b1c1a134e9f640a419c69989, type: 3}
