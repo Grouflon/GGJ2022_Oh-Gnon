@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8381892414791835566, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: voiceType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1460102523067099903, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_RootOrder
       value: 0

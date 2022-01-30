@@ -20,7 +20,7 @@ public class AgentAudio : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = Random.Range(0.01f, 0.02f);
         barkTime = Random.Range(2f, 15f);
-        voiceType = (VoiceType)Random.Range(0, 3);
+        //voiceType = (VoiceType)Random.Range(0, 3);
     }
 
     void OnAgentStateChanged(Agent agent, AgentState previousState, AgentState currentState)
