@@ -31,6 +31,6 @@ public class DropZone : MonoBehaviour
 
     public void Use()
     {
-        Instantiate(m_explosionFX, transform.position, transform.rotation);
+        //Instantiate(m_explosionFX, transform.position, transform.rotation);
     }
 }

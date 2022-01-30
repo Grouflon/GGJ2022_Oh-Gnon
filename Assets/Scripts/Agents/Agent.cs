@@ -19,6 +19,7 @@ public class Agent : MonoBehaviour
 {
     public int id = -1;
     public CharacterInfos infos;
+    public GameObject deathFX;
 
     AgentState agentState = AgentState.IDLE;
     Vector3 destination;
@@ -62,6 +63,10 @@ public class Agent : MonoBehaviour
     {
         SetState(AgentState.DEAD);
         if (OnAgentKilled != null) OnAgentKilled(this);
+
+        if (deathFX != null)
+            Instantiate(deathFX, transform.position, transform.rotation);
+
         Destroy(gameObject);
     }
 

@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: infos
       value: 
       objectReference: {fileID: 11400000, guid: 0505325e1d36406419385e65f7cb92c6, type: 2}
+    - target: {fileID: 5697866203614312016, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
+      propertyPath: deathFX
+      value: 
+      objectReference: {fileID: 3619070796288349985, guid: f4b503cce0f3ac34e922b5e21fb1d2c9, type: 3}
     - target: {fileID: 6383022333730228090, guid: ee94c9fa5d85a8846ba3c56fbcdf3b65, type: 3}
       propertyPath: m_Name
       value: 02_Geraldine
