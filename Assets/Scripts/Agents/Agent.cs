@@ -70,7 +70,7 @@ public class Agent : MonoBehaviour
     public void SetState(AgentState state)
     {
 
-        if (agentState == state)
+       if (agentState == state)
             return;
 
         if (OnAgentStateChanged != null) OnAgentStateChanged(this, agentState, state);

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AgentAudio : MonoBehaviour
 {
+    public VoiceType voiceType;
+
     Agent agent;
 
     AudioSource audioSource;
@@ -18,6 +20,7 @@ public class AgentAudio : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = Random.Range(0.01f, 0.02f);
         barkTime = Random.Range(2f, 15f);
+        voiceType = (VoiceType)Random.Range(0, 3);
     }
 
     void OnAgentStateChanged(Agent agent, AgentState previousState, AgentState currentState)
@@ -25,7 +28,7 @@ public class AgentAudio : MonoBehaviour
         if(previousState != AgentState.DRAGGED && currentState == AgentState.DRAGGED)
         {
             Debug.Log("AUDIO : Play FEAR");
-            SoundManager.Get().PlayRandomSound(SoundType.FEAR);
+            SoundManager.Get().PlayRandomSoundByVoiceType(SoundType.FEAR, voiceType);
         }
 
         if(previousState == AgentState.DRAGGED)
@@ -36,7 +39,7 @@ public class AgentAudio : MonoBehaviour
 
         if (currentState == AgentState.DEAD)
         {
-            SoundManager.Get().PlayRandomSound(SoundType.DEATH);
+            SoundManager.Get().PlayRandomSoundByVoiceType(SoundType.DEATH, voiceType);
         }
 
         /*if (agent.GetState() == AgentState.WALK || agent.GetState() == AgentState.IDLE)
@@ -58,7 +61,7 @@ public class AgentAudio : MonoBehaviour
         {
             if (audioSource != null && SoundManager.Get() != null)
             {
-                SoundManager.Get().PlayRandomSound(SoundType.BARK, audioSource);
+                SoundManager.Get().PlayRandomSoundByVoiceType(SoundType.BARK, voiceType, audioSource);
             }
             barkCurrentTimer = 0f;
             barkTime = AgentManager.Get().GetRandomBarkTime();

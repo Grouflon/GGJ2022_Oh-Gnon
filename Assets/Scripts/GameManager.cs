@@ -53,12 +53,14 @@ public class GameManager : MonoBehaviour
         if (playerObjectives[m_localPlayer] == _agent.id)
         {
             setGameState(GameState.GameOver);
+            SoundManager.Get().PlayEndClip(false);
         }
         else if (AgentManager.Get().agents.Count == 1)
         {
             Assert.IsTrue(AgentManager.Get().agents[0].id == playerObjectives[m_localPlayer]);
             m_isWinning = true;
             setGameState(GameState.GameOver);
+            SoundManager.Get().PlayEndClip(true);
         }
     }
 
