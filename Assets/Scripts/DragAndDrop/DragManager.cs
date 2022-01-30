@@ -45,6 +45,8 @@ public class DragManager : MonoBehaviour
         {
             m_currentDropZone.Use();
             m_currentDraggable.GetComponent<Agent>().Kill(m_currentDropZone.Fatality);
+            m_currentDropZone.Unselect();
+            m_currentDropZone = null;
         }
 
         m_currentDraggable = null;
@@ -52,13 +54,6 @@ public class DragManager : MonoBehaviour
 
     private void Update()
     {
-        // Unselect current drop zone
-        if (m_currentDropZone != null)
-        {
-            m_currentDropZone.Unselect();
-            m_currentDropZone = null;
-        }
-
         if (m_currentDraggable == null)
             return;
 
@@ -71,8 +66,23 @@ public class DragManager : MonoBehaviour
             if (hit == default(RaycastHit2D))
                 return;
 
-            m_currentDropZone = hit.collider.transform.GetComponent<DropZone>();
-            m_currentDropZone.Select();
+            var dropZone = hit.collider.transform.GetComponent<DropZone>();
+            if (dropZone == m_currentDropZone)
+                return;
+
+            if (m_currentDropZone != null)
+                m_currentDropZone.Unselect();
+
+            dropZone.Select();
+            m_currentDropZone = dropZone;
+        }
+        else
+        {
+            if (m_currentDropZone != null)
+            {
+                m_currentDropZone.Unselect();
+                m_currentDropZone = null;
+            }
         }
     }
 }
