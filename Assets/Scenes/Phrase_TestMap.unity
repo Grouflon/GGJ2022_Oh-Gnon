@@ -505,10 +505,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6599361097902646613, guid: 563b9adc36b2b0344986a5b0ce2fed88, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 563b9adc36b2b0344986a5b0ce2fed88, type: 3}
       propertyPath: m_Name
       value: 08_Tom-Tom
@@ -698,10 +694,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: 6aee0731ec10f924bacdef6b0cdd800c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599361097902646613, guid: 6aee0731ec10f924bacdef6b0cdd800c, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: 6aee0731ec10f924bacdef6b0cdd800c, type: 3}
@@ -1215,10 +1207,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: f24e38a7a0e60cc4e9d62a71f6a9e475, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599361097902646613, guid: f24e38a7a0e60cc4e9d62a71f6a9e475, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: f24e38a7a0e60cc4e9d62a71f6a9e475, type: 3}
@@ -1918,10 +1906,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3905128847191640224, guid: e3aecc8842e2db5439fe730ec5c8a667, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599361097902646613, guid: e3aecc8842e2db5439fe730ec5c8a667, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856208285172098341, guid: e3aecc8842e2db5439fe730ec5c8a667, type: 3}
