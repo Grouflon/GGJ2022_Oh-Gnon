@@ -17,5 +17,5 @@ MonoBehaviour:
   MaxWalkDistance: 3
   MinTimeBetweenWalks: 1
   MaxTimeBetweenWalks: 5
-  MinTimeBetweenBarks: 5
-  MaxTimeBetweenBarks: 30
+  MinTimeBetweenBarks: 20
+  MaxTimeBetweenBarks: 40
