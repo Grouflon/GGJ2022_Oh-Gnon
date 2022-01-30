@@ -104,7 +104,7 @@ public class SetupScreenController : MonoBehaviour
                 }
                 else
                 {
-                    messageText.text = "You must enter a number";
+                    messageText.text = "Vous devez rentrer un nombre (max 10 chiffres)";
                 }
             }
         }
