@@ -44,7 +44,7 @@ public class DragManager : MonoBehaviour
             m_currentDropZone != null)
         {
             m_currentDropZone.Use();
-            m_currentDraggable.GetComponent<Agent>().Kill();
+            m_currentDraggable.GetComponent<Agent>().Kill(m_currentDropZone.Fatality);
         }
 
         m_currentDraggable = null;

@@ -4,33 +4,50 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+using Spine.Unity;
+
 [RequireComponent(typeof(Collider2D))]
 public class DropZone : MonoBehaviour
 {
-    [SerializeField] private GameObject m_explosionFX;
-    [SerializeField] private Color m_defaultColor;
-    [SerializeField] private Color m_overColor;
+    public EFatality Fatality;
 
-    private SpriteRenderer m_sr;
+    [SerializeField] private bool m_playExplosion = false;
+    [SerializeField] private GameObject m_explosionFX;
+
+    [Header("Animations")]
+    [SerializeField] private string m_idleAnimation;
+    [SerializeField] private string m_inUseAnimation;
+
+    SkeletonAnimation skeletonAnimation;
+
     private bool m_mouseOver = false;
 
-    private void Awake()
+    private void Start()
     {
-        m_sr = GetComponent<SpriteRenderer>();
+        skeletonAnimation = GetComponentInChildren<SkeletonAnimation>(true);
+        Unselect();
     }
 
     public void Unselect()
     {
-        m_sr.color = m_defaultColor;
+        skeletonAnimation.AnimationName = m_idleAnimation;
     }
 
     public void Select()
     {
-        m_sr.color = m_overColor;
+        skeletonAnimation.AnimationName = m_inUseAnimation;
     }
 
     public void Use()
     {
-        //Instantiate(m_explosionFX, transform.position, transform.rotation);
+        if (m_playExplosion)
+        {
+            Invoke("Explosion", 0.5f);
+        }
+    }
+
+    private void Explosion()
+    {
+        Instantiate(m_explosionFX, transform.position, transform.rotation);
     }
 }

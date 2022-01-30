@@ -6,6 +6,9 @@ using TMPro;
 
 public class SetupScreenController : MonoBehaviour
 {
+    public Color normalColor = Color.white;
+    public Color selectedColor = Color.red;
+
     [Header("Internal")]
     public Button p1Button;
     public Button p2Button;
@@ -61,9 +64,6 @@ public class SetupScreenController : MonoBehaviour
 
         // Player buttons
         {
-            Color normalColor = Color.white;
-            Color selectedColor = Color.red;
-
             ColorBlock p1Colors = p1Button.colors;
             ColorBlock p2Colors = p2Button.colors;
 
