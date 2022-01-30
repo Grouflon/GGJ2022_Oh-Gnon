@@ -19,7 +19,7 @@ MonoBehaviour:
   - hey
   - Wesh
   - Salutation.
-  - oh
+  - oh!
   PhrasePanic:
   - Aaaaah!
   - Noooon!
@@ -29,15 +29,17 @@ MonoBehaviour:
   - Aled!
   - Sauce qui peut!!!
   - Pas elle!
-  - Tu m'aura pas
+  - Tu m'aura pas!
+  - O_O
   PhraseWhenGrabbed:
   - Pas moi!
   - "On m'a attrap\xE9!"
   - Me tuez pas!
   - Maman!
-  - Hey pour qui tu te prend
+  - Hey pour qui tu te prend?
   - "Ouch, a\xEFe!"
   - "M\xE9creant"
+  - :(
   PhraseJumeaux:
   - 'Aaaaaah '
   - Nooon, ma vie n'a plus aucun sens sans mon jumeaux
